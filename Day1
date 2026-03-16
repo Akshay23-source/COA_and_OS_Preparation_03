@@ -1,0 +1,364 @@
+Today’s concepts:
+
+🧠 Operating System
+
+1️⃣ Program vs Process
+2️⃣ Process Control Block (PCB)
+
+⚙️ COA (Computer Organization & Architecture)
+
+3️⃣ CPU Organization
+4️⃣ Registers
+
+🧠 OS Concept 1: Program vs Process
+1️⃣ Simple Idea
+
+A Program is just code stored in disk.
+
+A Process is that program running in memory.
+
+Example
+
+If you write a Python program:
+
+print("Hello")
+
+When the file is saved:
+
+➡ It is a program
+
+When you run:
+
+python hello.py
+
+➡ OS loads it into RAM and executes it
+
+Now it becomes a process.
+
+🧠 Real-World Analogy
+
+📖 Recipe book = Program
+
+👨‍🍳 Chef cooking the recipe = Process
+
+A recipe sitting in a book does nothing.
+
+Cooking the recipe = execution.
+
+⚙️ Why OS Created Processes
+
+Early computers ran only one program at a time.
+
+Modern systems run:
+
+Browser
+
+VS Code
+
+Spotify
+
+Terminal
+
+OS services
+
+All at once.
+
+To manage this, OS created the concept of processes.
+
+Each process gets:
+
+CPU time
+
+Memory
+
+Resources
+
+🔗 Connection to What You Know
+
+When you run:
+
+python app.py
+
+OS does:
+
+Disk → RAM → CPU executes
+
+Now the program becomes a process with a PID.
+
+Example:
+
+PID 1024 → python process
+🎯 Placement Interview Question
+
+Q: Difference between program and process?
+
+Best answer:
+
+A program is a passive set of instructions stored on disk, while a process is an active instance of a program that is currently being executed by the CPU.
+
+🧠 Memory Trick
+Program = Passive
+Process = Performing
+🧠 OS Concept 2: Process Control Block (PCB)
+
+Now the important question.
+
+If 100 processes are running,
+
+How does OS remember everything about each process?
+
+Answer → PCB
+
+1️⃣ Simple Definition
+
+PCB (Process Control Block)
+is a data structure used by the OS to store information about a process.
+
+Think of it as a process identity card.
+
+🧠 Real Life Analogy
+
+Imagine student records in college.
+
+Each student has:
+
+Roll number
+
+Marks
+
+Attendance
+
+Department
+
+Similarly, each process has a PCB record.
+
+⚙️ What PCB Stores
+
+Typical PCB contains:
+
+Process ID (PID)
+Process state
+Program counter
+CPU registers
+Memory info
+Open files
+Scheduling info
+
+Example:
+
+Process: Chrome
+
+PID: 2210
+State: Running
+Memory: 200MB
+Registers: values
+Program Counter: instruction location
+⚙️ Why PCB is Needed
+
+Imagine OS switching between processes.
+
+Example:
+
+Process A
+Process B
+Process C
+
+When OS pauses a process it must save its state.
+
+PCB stores that state.
+
+Later OS resumes it from same point.
+
+🧠 Mental Model
+
+Think of video game save file.
+
+When you pause game:
+
+Level
+Position
+Health
+Weapons
+
+All saved.
+
+PCB is exactly that.
+
+🎯 Interview Question
+
+Q: What happens during context switch?
+
+Answer:
+
+The CPU state of the running process is saved into its PCB, and the next process state is loaded from its PCB.
+
+⚙️ COA Concept 3: CPU Organization
+
+Now we move to hardware side.
+
+1️⃣ Simple Idea
+
+CPU is the brain of the computer.
+
+But inside CPU there are multiple components.
+
+Main parts:
+
+CPU
+ ├── ALU
+ ├── Control Unit
+ └── Registers
+🧠 Real World Analogy
+
+Think of a restaurant kitchen.
+
+Chef = CPU
+
+Inside kitchen:
+
+Chef instructions → Control Unit
+Cooking → ALU
+Ingredients storage → Registers
+⚙️ Components of CPU
+1️⃣ ALU (Arithmetic Logic Unit)
+
+Does calculations:
+
+Addition
+Subtraction
+AND
+OR
+Comparison
+
+Example:
+
+5 + 3
+10 > 4
+2️⃣ Control Unit
+
+Acts like manager of CPU.
+
+It:
+
+fetches instructions
+
+decodes instructions
+
+controls execution
+
+Example:
+
+ADD R1 R2
+
+Control unit tells ALU:
+
+Add values of R1 and R2
+3️⃣ Registers
+
+Very fast small memory inside CPU.
+
+Stores:
+
+data
+instructions
+addresses
+🧠 Why CPU Organization Matters
+
+Because CPU must:
+
+Fetch → Decode → Execute
+
+for billions of instructions per second.
+
+Efficient design makes computers fast.
+
+🎯 Placement Question
+
+Q: What are main components of CPU?
+
+Answer:
+
+ALU
+Control Unit
+Registers
+⚙️ COA Concept 4: Registers
+
+Registers are the fastest memory in the computer.
+
+Faster than:
+
+Cache
+RAM
+Disk
+1️⃣ Simple Definition
+
+Registers are small storage locations inside CPU used to hold data temporarily during execution.
+
+🧠 Real Life Analogy
+
+Imagine solving math.
+
+You keep numbers in your mind before writing them.
+
+Your mind = registers
+
+Notebook = RAM
+
+⚙️ Example
+
+Suppose we calculate:
+
+5 + 3
+
+Steps:
+
+Load 5 → Register R1
+Load 3 → Register R2
+Add R1 R2
+Result → R3
+⚙️ Common Registers
+
+Important ones:
+
+PC  → Program Counter
+IR  → Instruction Register
+MAR → Memory Address Register
+MDR → Memory Data Register
+Program Counter (PC)
+
+Stores address of next instruction.
+
+Example:
+
+Instruction 100
+Instruction 104
+Instruction 108
+
+PC tells CPU which instruction comes next.
+
+🧠 Memory Trick
+Registers = CPU's pocket memory
+
+Small but super fast.
+
+📌 Today's Concepts Summary
+OS
+
+✔ Program vs Process
+✔ Process Control Block
+
+COA
+
+✔ CPU Organization
+✔ Registers
+
+🧠 Quick Self-Check (Very Important)
+
+Answer these yourself:
+
+1️⃣ What is difference between program and process?
+2️⃣ Why does OS maintain PCB?
+3️⃣ What are the 3 main parts of CPU?
+4️⃣ Why are registers faster than RAM?
+
+If you can answer these without notes, you understood today’s lesson.

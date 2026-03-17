@@ -1,0 +1,138 @@
+🚀 Topic: How Your Monitoring System Works (Core Idea)
+🧠 Simple Understanding
+
+Think of your system like a watchman 👮‍♂️:
+
+Servers → Watchman (your Go code) → Reports status
+
+If everything is fine → “All good ✅”
+
+If something fails → “Alert 🚨”
+
+⚙️ Core Flow (Very Important)
+Scheduler → Checker → Result → Database → Alert → API → Dashboard
+Step-by-step:
+
+1️⃣ Scheduler
+
+Runs every few seconds
+
+Triggers checks
+
+2️⃣ Checker (Your code)
+
+Ping / HTTP / TCP / DNS
+
+Example:
+
+CheckHTTP("google.com")
+
+3️⃣ Result
+
+Status: Online
+Response: 45ms
+
+4️⃣ Database
+
+Stores results for history
+
+5️⃣ Alert
+
+Sends message if server is down
+
+6️⃣ API
+
+Sends data to frontend
+
+🔥 Core Concept: Concurrency (VERY IMPORTANT)
+Why Go is used?
+
+Because of goroutines
+
+Example:
+go CheckHTTP("google.com")
+go CheckPing("github.com")
+
+👉 Both run at the same time
+
+Real-life analogy
+
+Instead of:
+
+Check 1 → Wait → Check 2 → Wait → Check 3
+
+Go does:
+
+Check 1
+Check 2
+Check 3   (ALL at once 🚀)
+💡 Key Concepts You Used Today
+Concept	Where used
+Struct	CheckResult, Server
+Package	checkers, alerts
+Concurrency	goroutines
+Networking	ping, http, tcp
+Error handling	if err != nil
+Modules	go.mod
+🎯 Placement Insight
+
+Interview question:
+
+👉 Why Go for monitoring systems?
+
+Answer:
+
+Go is used because it supports lightweight concurrency using goroutines,
+which allows monitoring thousands of servers simultaneously with low memory usage.
+🧩 Mini Practice (Very Important)
+
+Try this simple program:
+
+package main
+
+import (
+	"fmt"
+	"net/http"
+)
+
+func main() {
+	resp, err := http.Get("https://google.com")
+
+	if err != nil {
+		fmt.Println("Server Down ❌")
+		return
+	}
+
+	defer resp.Body.Close()
+
+	fmt.Println("Server Status:", resp.Status)
+}
+🧠 10 MOST ASKED Computer Network Interview Questions
+
+(As you requested daily)
+
+What is TCP vs UDP?
+
+What is DNS and how it works?
+
+What is HTTP vs HTTPS?
+
+What is latency?
+
+What is packet loss?
+
+What is port number?
+
+What is ping?
+
+What is subnet?
+
+What is firewall?
+
+What is load balancing?
+
+🧠 Quick Revision
+Monitoring System = Checking servers continuously
+Go = Fast + Concurrent
+Checkers = Ping, HTTP, TCP, DNS
+Alerts = Notify when failure

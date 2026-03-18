@@ -1,0 +1,323 @@
+🧠 OS Concept 1: Process States
+1️⃣ Simple Idea
+
+A process is not always running.
+It keeps changing states.
+
+Main states:
+
+New → Ready → Running → Waiting → Terminated
+🧠 Real-World Analogy
+
+Think of you in a job interview process:
+
+Applied → (New)
+
+Waiting in hall → (Ready)
+
+Giving interview → (Running)
+
+Waiting for result → (Waiting)
+
+Selected/Rejected → (Terminated)
+
+⚙️ Why This Exists
+
+CPU is limited (only one core executes one process at a time).
+
+So OS must:
+
+keep some processes waiting
+
+run one process at a time
+
+switch between them
+
+⚙️ How It Works
+🔹 New
+
+Process just created
+
+🔹 Ready
+
+Waiting for CPU
+
+🔹 Running
+
+Currently executing
+
+🔹 Waiting (Blocked)
+
+Waiting for I/O (like file read)
+
+🔹 Terminated
+
+Execution finished
+
+🔗 Connection to Programming
+
+When you run a program:
+
+python app.py
+
+OS creates process → New
+
+waits for CPU → Ready
+
+executes → Running
+
+reads file → Waiting
+
+finishes → Terminated
+
+🎯 Placement Question
+
+Q: Difference between Ready and Waiting state?
+
+👉 Ready = waiting for CPU
+👉 Waiting = waiting for I/O
+
+🧠 Memory Trick
+Ready = CPU wait
+Waiting = Resource wait
+🧠 OS Concept 2: Context Switching
+
+Now the most important concept 🔥
+
+1️⃣ Simple Idea
+
+CPU switches from one process to another.
+
+This switching is called:
+
+👉 Context Switching
+
+🧠 Real-World Analogy
+
+Imagine you are:
+
+watching YouTube
+
+coding
+
+chatting
+
+You switch tasks constantly.
+
+Before switching, your brain remembers:
+
+what you were doing
+
+where you stopped
+
+That memory = context
+
+⚙️ Why It Exists
+
+CPU can run only one process at a time (per core).
+
+But we want:
+
+Multitasking experience
+
+So OS quickly switches processes.
+
+⚙️ How It Works Internally
+
+Step-by-step:
+
+1️⃣ Save current process data into PCB
+2️⃣ Load next process data from PCB
+3️⃣ CPU starts executing new process
+
+Process A → (save state)
+Process B → (load state)
+🔗 Connection to PCB (Day 1)
+
+PCB stores:
+
+Registers
+Program counter
+State
+
+During context switch:
+
+👉 PCB is used to save & restore process
+
+⚠️ Important Point
+
+Context switching is overhead (no real work done).
+
+So too many switches = slow system.
+
+🎯 Placement Question
+
+Q: What is context switching?
+
+👉 Saving current process state and loading another process state to switch CPU execution.
+
+🧠 Memory Trick
+Context switch = Pause → Save → Load → Resume
+⚙️ COA Concept 3: Instruction Cycle
+
+Now we go inside CPU deeply.
+
+1️⃣ Simple Idea
+
+CPU works in a loop:
+
+👉 Fetch → Decode → Execute
+
+🔥 This is the HEART of computer
+
+\text{Instruction Cycle: Fetch \rightarrow Decode \rightarrow Execute}
+
+🧠 Real-World Analogy
+
+Think of cooking:
+
+1️⃣ Read recipe → (Fetch)
+2️⃣ Understand → (Decode)
+3️⃣ Cook → (Execute)
+
+⚙️ Step-by-Step Working
+1️⃣ Fetch
+
+CPU gets instruction from memory.
+
+Using:
+
+👉 Program Counter (PC)
+
+2️⃣ Decode
+
+Control unit understands instruction.
+
+Example:
+
+ADD R1 R2
+3️⃣ Execute
+
+ALU performs operation.
+
+R1 + R2
+🔗 Connection to Registers
+
+PC → next instruction
+
+IR → current instruction
+
+Registers → hold data
+
+🎯 Placement Question
+
+Q: What are stages of instruction cycle?
+
+👉 Fetch, Decode, Execute
+
+🧠 Memory Trick
+FDE = Fetch Decode Execute
+⚙️ COA Concept 4: Addressing Modes
+
+This is asked a lot in interviews.
+
+1️⃣ Simple Idea
+
+Addressing mode =
+👉 How CPU finds data for instruction
+
+🧠 Real-World Analogy
+
+If I say:
+
+👉 "Bring book"
+
+You ask:
+
+Which book?
+
+Where is it?
+
+That is addressing.
+
+⚙️ Types (Important Ones)
+1️⃣ Immediate Addressing
+
+Data is inside instruction
+
+MOV R1, 5
+
+👉 Value = 5 (direct)
+
+2️⃣ Direct Addressing
+
+Instruction contains memory address
+
+MOV R1, [1000]
+
+👉 Go to memory 1000
+
+3️⃣ Register Addressing
+
+Data is in register
+
+MOV R1, R2
+
+👉 Use R2 value
+
+4️⃣ Indirect Addressing
+
+Register contains address
+
+MOV R1, [R2]
+
+👉 R2 → address → data
+
+⚙️ Why Addressing Modes Exist
+
+To:
+
+make instructions flexible
+
+improve performance
+
+reduce memory usage
+
+🔗 Connection to Programming
+
+In C:
+
+int x = 5;
+int *p = &x;
+
+👉 pointer = indirect addressing
+
+🎯 Placement Question
+
+Q: What is immediate vs direct addressing?
+
+👉 Immediate = value inside instruction
+👉 Direct = value from memory address
+
+🧠 Memory Trick
+Immediate = instant value
+Direct = direct memory
+Register = inside CPU
+Indirect = address of address
+📌 Today’s Summary
+🧠 OS
+
+✔ Process States
+✔ Context Switching
+
+⚙️ COA
+
+✔ Instruction Cycle
+✔ Addressing Modes
+
+🧠 Self-Test (Must Do)
+
+1️⃣ Why does process move to waiting state?
+2️⃣ What is saved during context switch?
+3️⃣ What does Program Counter do?
+4️⃣ Difference between direct & indirect addressing?

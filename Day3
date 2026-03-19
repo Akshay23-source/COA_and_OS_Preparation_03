@@ -1,323 +1,271 @@
-🧠 OS Concept 1: Process States
+🧠 OS Concept 1: Threads
 1️⃣ Simple Idea
 
-A process is not always running.
-It keeps changing states.
+A thread is the smallest unit of execution inside a process.
 
-Main states:
+👉 Process = big container
+👉 Threads = workers inside it
 
-New → Ready → Running → Waiting → Terminated
 🧠 Real-World Analogy
 
-Think of you in a job interview process:
+Think of a restaurant 🍽️
 
-Applied → (New)
+Restaurant = Process
 
-Waiting in hall → (Ready)
+Waiters = Threads
 
-Giving interview → (Running)
+All waiters:
 
-Waiting for result → (Waiting)
+work independently
 
-Selected/Rejected → (Terminated)
+but share same kitchen & resources
 
-⚙️ Why This Exists
+⚙️ Why Threads Exist
 
-CPU is limited (only one core executes one process at a time).
+Problem with processes:
 
-So OS must:
+❌ Heavy (more memory)
+❌ Slow to switch
 
-keep some processes waiting
+Solution:
 
-run one process at a time
-
-switch between them
+👉 Threads are lightweight and faster
 
 ⚙️ How It Works
-🔹 New
 
-Process just created
+Inside one process:
 
-🔹 Ready
+Process (Chrome)
+ ├── Thread 1 → UI
+ ├── Thread 2 → Network
+ ├── Thread 3 → Rendering
 
-Waiting for CPU
+All threads share:
 
-🔹 Running
+memory
 
-Currently executing
+files
 
-🔹 Waiting (Blocked)
+resources
 
-Waiting for I/O (like file read)
+But each has its own:
 
-🔹 Terminated
+stack
 
-Execution finished
+registers
 
 🔗 Connection to Programming
 
-When you run a program:
+In Python:
 
-python app.py
+import threading
 
-OS creates process → New
+def task():
+    print("Running thread")
 
-waits for CPU → Ready
+t = threading.Thread(target=task)
+t.start()
 
-executes → Running
-
-reads file → Waiting
-
-finishes → Terminated
+👉 Multiple threads run inside one program.
 
 🎯 Placement Question
 
-Q: Difference between Ready and Waiting state?
+Q: Difference between process and thread?
 
-👉 Ready = waiting for CPU
-👉 Waiting = waiting for I/O
+👉 Process = heavy, separate memory
+👉 Thread = lightweight, shared memory
 
 🧠 Memory Trick
-Ready = CPU wait
-Waiting = Resource wait
-🧠 OS Concept 2: Context Switching
+Process = separate house
+Thread = roommates in same house
+🧠 OS Concept 2: CPU Scheduling
 
-Now the most important concept 🔥
+Now the core of OS 🔥
 
 1️⃣ Simple Idea
 
-CPU switches from one process to another.
-
-This switching is called:
-
-👉 Context Switching
+CPU scheduling =
+👉 deciding which process gets CPU next
 
 🧠 Real-World Analogy
 
-Imagine you are:
+Teacher in class 👨‍🏫
 
-watching YouTube
+Students raise hands 🙋‍♂️
 
-coding
+Teacher decides:
 
-chatting
+who answers first
 
-You switch tasks constantly.
+who waits
 
-Before switching, your brain remembers:
-
-what you were doing
-
-where you stopped
-
-That memory = context
+That is scheduling.
 
 ⚙️ Why It Exists
 
-CPU can run only one process at a time (per core).
+Many processes want CPU:
 
-But we want:
+P1, P2, P3, P4...
 
-Multitasking experience
+But CPU is limited.
 
-So OS quickly switches processes.
+So OS must choose:
 
-⚙️ How It Works Internally
+👉 who runs next?
 
-Step-by-step:
+⚙️ Important Algorithms
+1️⃣ FCFS (First Come First Serve)
 
-1️⃣ Save current process data into PCB
-2️⃣ Load next process data from PCB
-3️⃣ CPU starts executing new process
+👉 First process gets CPU first
 
-Process A → (save state)
-Process B → (load state)
-🔗 Connection to PCB (Day 1)
+P1 → P2 → P3
 
-PCB stores:
+❌ Problem: slow if first process is big
 
-Registers
-Program counter
-State
+2️⃣ SJF (Shortest Job First)
 
-During context switch:
+👉 Smallest job runs first
 
-👉 PCB is used to save & restore process
+✔ Faster overall
+❌ Hard to know job size
 
-⚠️ Important Point
+3️⃣ Round Robin (Most Important)
 
-Context switching is overhead (no real work done).
+👉 Each process gets time slice
 
-So too many switches = slow system.
+P1 → P2 → P3 → P1 → P2...
+
+✔ Fair system
+✔ Used in real OS
+
+🔗 Connection to Context Switching
+
+Every time CPU switches process:
+
+👉 context switch happens
 
 🎯 Placement Question
 
-Q: What is context switching?
+Q: Why is Round Robin better than FCFS?
 
-👉 Saving current process state and loading another process state to switch CPU execution.
+👉 Because it prevents starvation and gives fair CPU time.
 
 🧠 Memory Trick
-Context switch = Pause → Save → Load → Resume
-⚙️ COA Concept 3: Instruction Cycle
-
-Now we go inside CPU deeply.
-
+FCFS = queue
+SJF = shortest first
+RR = circular turn
+⚙️ COA Concept 3: ALU (Arithmetic Logic Unit)
 1️⃣ Simple Idea
 
-CPU works in a loop:
-
-👉 Fetch → Decode → Execute
-
-🔥 This is the HEART of computer
-
-\text{Instruction Cycle: Fetch \rightarrow Decode \rightarrow Execute}
+ALU =
+👉 part of CPU that performs calculations and logic operations
 
 🧠 Real-World Analogy
 
-Think of cooking:
+Calculator 🧮
 
-1️⃣ Read recipe → (Fetch)
-2️⃣ Understand → (Decode)
-3️⃣ Cook → (Execute)
+Whatever math you do → ALU does it in CPU.
 
-⚙️ Step-by-Step Working
-1️⃣ Fetch
-
-CPU gets instruction from memory.
-
-Using:
-
-👉 Program Counter (PC)
-
-2️⃣ Decode
-
-Control unit understands instruction.
-
-Example:
-
+⚙️ What ALU Does
+Arithmetic
++  -  *  /
+Logic
+AND  OR  NOT  >
+⚙️ Example
 ADD R1 R2
-3️⃣ Execute
 
-ALU performs operation.
+ALU:
 
-R1 + R2
-🔗 Connection to Registers
-
-PC → next instruction
-
-IR → current instruction
-
-Registers → hold data
-
-🎯 Placement Question
-
-Q: What are stages of instruction cycle?
-
-👉 Fetch, Decode, Execute
-
-🧠 Memory Trick
-FDE = Fetch Decode Execute
-⚙️ COA Concept 4: Addressing Modes
-
-This is asked a lot in interviews.
-
-1️⃣ Simple Idea
-
-Addressing mode =
-👉 How CPU finds data for instruction
-
-🧠 Real-World Analogy
-
-If I say:
-
-👉 "Bring book"
-
-You ask:
-
-Which book?
-
-Where is it?
-
-That is addressing.
-
-⚙️ Types (Important Ones)
-1️⃣ Immediate Addressing
-
-Data is inside instruction
-
-MOV R1, 5
-
-👉 Value = 5 (direct)
-
-2️⃣ Direct Addressing
-
-Instruction contains memory address
-
-MOV R1, [1000]
-
-👉 Go to memory 1000
-
-3️⃣ Register Addressing
-
-Data is in register
-
-MOV R1, R2
-
-👉 Use R2 value
-
-4️⃣ Indirect Addressing
-
-Register contains address
-
-MOV R1, [R2]
-
-👉 R2 → address → data
-
-⚙️ Why Addressing Modes Exist
-
-To:
-
-make instructions flexible
-
-improve performance
-
-reduce memory usage
-
+R1 + R2 → store result
 🔗 Connection to Programming
 
 In C:
 
-int x = 5;
-int *p = &x;
+int a = 5 + 3;
 
-👉 pointer = indirect addressing
+👉 ALU performs this operation internally.
 
 🎯 Placement Question
 
-Q: What is immediate vs direct addressing?
+Q: What operations does ALU perform?
 
-👉 Immediate = value inside instruction
-👉 Direct = value from memory address
+👉 Arithmetic and logical operations.
 
 🧠 Memory Trick
-Immediate = instant value
-Direct = direct memory
-Register = inside CPU
-Indirect = address of address
+ALU = All Logic & Arithmetic
+⚙️ COA Concept 4: Instruction Formats
+1️⃣ Simple Idea
+
+Instruction format =
+👉 structure of an instruction
+
+🧠 Real-World Analogy
+
+Think of a message format:
+
+[Action] [Who] [Where]
+
+Similarly CPU instruction:
+
+[Opcode] [Operands]
+⚙️ Components
+1️⃣ Opcode
+
+👉 what operation to perform
+
+Example:
+
+ADD, SUB, MOV
+2️⃣ Operand
+
+👉 data or location
+
+Example:
+
+R1, R2
+⚙️ Types of Instruction Format
+1️⃣ Zero Address
+ADD
+
+(stack based)
+
+2️⃣ One Address
+ADD X
+3️⃣ Two Address
+ADD R1, R2
+4️⃣ Three Address
+ADD R1, R2, R3
+🔗 Connection to Addressing Modes (Day 2)
+
+Instruction format tells:
+
+👉 WHAT to do
+Addressing mode tells:
+
+👉 WHERE to get data
+
+🎯 Placement Question
+
+Q: What is opcode?
+
+👉 It specifies the operation to be performed.
+
+🧠 Memory Trick
+Instruction = Action + Data
 📌 Today’s Summary
 🧠 OS
 
-✔ Process States
-✔ Context Switching
+✔ Threads
+✔ CPU Scheduling
 
 ⚙️ COA
 
-✔ Instruction Cycle
-✔ Addressing Modes
+✔ ALU
+✔ Instruction Formats
 
-🧠 Self-Test (Must Do)
+🧠 Self-Test (Must Try)
 
-1️⃣ Why does process move to waiting state?
-2️⃣ What is saved during context switch?
-3️⃣ What does Program Counter do?
-4️⃣ Difference between direct & indirect addressing?
+1️⃣ Why are threads faster than processes?
+2️⃣ Which scheduling algorithm is most used in real OS?
+3️⃣ Who performs calculations inside CPU?
+4️⃣ What is opcode?

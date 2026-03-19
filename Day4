@@ -1,0 +1,290 @@
+Today we move into very high-weight placement topics 🔥
+These are asked in almost every company (TCS, Infosys, Product companies).
+
+🧠 OS Concept 1: Threads
+1️⃣ Simple Idea
+
+A thread is the smallest unit of execution inside a process.
+
+👉 Process = big container
+👉 Threads = workers inside it
+
+🧠 Real-World Analogy
+
+Think of a restaurant 🍽️
+
+Restaurant = Process
+
+Waiters = Threads
+
+All waiters:
+
+work independently
+
+but share same kitchen & resources
+
+⚙️ Why Threads Exist
+
+Problem with processes:
+
+❌ Heavy (more memory)
+❌ Slow to switch
+
+Solution:
+
+👉 Threads are lightweight and faster
+
+⚙️ How It Works
+
+Inside one process:
+
+Process (Chrome)
+ ├── Thread 1 → UI
+ ├── Thread 2 → Network
+ ├── Thread 3 → Rendering
+
+All threads share:
+
+memory
+
+files
+
+resources
+
+But each has its own:
+
+stack
+
+registers
+
+🔗 Connection to Programming
+
+In Python:
+
+import threading
+
+def task():
+    print("Running thread")
+
+t = threading.Thread(target=task)
+t.start()
+
+👉 Multiple threads run inside one program.
+
+🎯 Placement Question
+
+Q: Difference between process and thread?
+
+👉 Process = heavy, separate memory
+👉 Thread = lightweight, shared memory
+
+🧠 Memory Trick
+Process = separate house
+Thread = roommates in same house
+🧠 OS Concept 2: CPU Scheduling
+
+Now the core of OS 🔥
+
+1️⃣ Simple Idea
+
+CPU scheduling =
+👉 deciding which process gets CPU next
+
+🧠 Real-World Analogy
+
+Teacher in class 👨‍🏫
+
+Students raise hands 🙋‍♂️
+
+Teacher decides:
+
+who answers first
+
+who waits
+
+That is scheduling.
+
+⚙️ Why It Exists
+
+Many processes want CPU:
+
+P1, P2, P3, P4...
+
+But CPU is limited.
+
+So OS must choose:
+
+👉 who runs next?
+
+⚙️ Important Algorithms
+1️⃣ FCFS (First Come First Serve)
+
+👉 First process gets CPU first
+
+P1 → P2 → P3
+
+❌ Problem: slow if first process is big
+
+2️⃣ SJF (Shortest Job First)
+
+👉 Smallest job runs first
+
+✔ Faster overall
+❌ Hard to know job size
+
+3️⃣ Round Robin (Most Important)
+
+👉 Each process gets time slice
+
+P1 → P2 → P3 → P1 → P2...
+
+✔ Fair system
+✔ Used in real OS
+
+🔗 Connection to Context Switching
+
+Every time CPU switches process:
+
+👉 context switch happens
+
+🎯 Placement Question
+
+Q: Why is Round Robin better than FCFS?
+
+👉 Because it prevents starvation and gives fair CPU time.
+
+🧠 Memory Trick
+FCFS = queue
+SJF = shortest first
+RR = circular turn
+⚙️ COA Concept 3: ALU (Arithmetic Logic Unit)
+1️⃣ Simple Idea
+
+ALU =
+👉 part of CPU that performs calculations and logic operations
+
+🧠 Real-World Analogy
+
+Calculator 🧮
+
+Whatever math you do → ALU does it in CPU.
+
+⚙️ What ALU Does
+Arithmetic
++  -  *  /
+Logic
+AND  OR  NOT  >
+⚙️ Example
+ADD R1 R2
+
+ALU:
+
+R1 + R2 → store result
+🔗 Connection to Programming
+
+In C:
+
+int a = 5 + 3;
+
+👉 ALU performs this operation internally.
+
+🎯 Placement Question
+
+Q: What operations does ALU perform?
+
+👉 Arithmetic and logical operations.
+
+🧠 Memory Trick
+ALU = All Logic & Arithmetic
+⚙️ COA Concept 4: Instruction Formats
+1️⃣ Simple Idea
+
+Instruction format =
+👉 structure of an instruction
+
+🧠 Real-World Analogy
+
+Think of a message format:
+
+[Action] [Who] [Where]
+
+Similarly CPU instruction:
+
+[Opcode] [Operands]
+⚙️ Components
+1️⃣ Opcode
+
+👉 what operation to perform
+
+Example:
+
+ADD, SUB, MOV
+2️⃣ Operand
+
+👉 data or location
+
+Example:
+
+R1, R2
+⚙️ Types of Instruction Format
+1️⃣ Zero Address
+ADD
+
+(stack based)
+
+2️⃣ One Address
+ADD X
+3️⃣ Two Address
+ADD R1, R2
+4️⃣ Three Address
+ADD R1, R2, R3
+🔗 Connection to Addressing Modes (Day 2)
+
+Instruction format tells:
+
+👉 WHAT to do
+Addressing mode tells:
+
+👉 WHERE to get data
+
+🎯 Placement Question
+
+Q: What is opcode?
+
+👉 It specifies the operation to be performed.
+
+🧠 Memory Trick
+Instruction = Action + Data
+📌 Today’s Summary
+🧠 OS
+
+✔ Threads
+✔ CPU Scheduling
+
+⚙️ COA
+
+✔ ALU
+✔ Instruction Formats
+
+🧠 Self-Test (Must Try)
+
+1️⃣ Why are threads faster than processes?
+2️⃣ Which scheduling algorithm is most used in real OS?
+3️⃣ Who performs calculations inside CPU?
+4️⃣ What is opcode?
+
+🚀 Day 4 Preview (Very Important)
+
+Next concepts are 🔥:
+
+OS
+
+Deadlock
+
+Critical Section
+
+COA
+
+Control Unit
+
+Pipelining

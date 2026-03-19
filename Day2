@@ -1,138 +1,323 @@
-🚀 Topic: How Your Monitoring System Works (Core Idea)
-🧠 Simple Understanding
+🧠 OS Concept 1: Process States
+1️⃣ Simple Idea
 
-Think of your system like a watchman 👮‍♂️:
+A process is not always running.
+It keeps changing states.
 
-Servers → Watchman (your Go code) → Reports status
+Main states:
 
-If everything is fine → “All good ✅”
+New → Ready → Running → Waiting → Terminated
+🧠 Real-World Analogy
 
-If something fails → “Alert 🚨”
+Think of you in a job interview process:
 
-⚙️ Core Flow (Very Important)
-Scheduler → Checker → Result → Database → Alert → API → Dashboard
+Applied → (New)
+
+Waiting in hall → (Ready)
+
+Giving interview → (Running)
+
+Waiting for result → (Waiting)
+
+Selected/Rejected → (Terminated)
+
+⚙️ Why This Exists
+
+CPU is limited (only one core executes one process at a time).
+
+So OS must:
+
+keep some processes waiting
+
+run one process at a time
+
+switch between them
+
+⚙️ How It Works
+🔹 New
+
+Process just created
+
+🔹 Ready
+
+Waiting for CPU
+
+🔹 Running
+
+Currently executing
+
+🔹 Waiting (Blocked)
+
+Waiting for I/O (like file read)
+
+🔹 Terminated
+
+Execution finished
+
+🔗 Connection to Programming
+
+When you run a program:
+
+python app.py
+
+OS creates process → New
+
+waits for CPU → Ready
+
+executes → Running
+
+reads file → Waiting
+
+finishes → Terminated
+
+🎯 Placement Question
+
+Q: Difference between Ready and Waiting state?
+
+👉 Ready = waiting for CPU
+👉 Waiting = waiting for I/O
+
+🧠 Memory Trick
+Ready = CPU wait
+Waiting = Resource wait
+🧠 OS Concept 2: Context Switching
+
+Now the most important concept 🔥
+
+1️⃣ Simple Idea
+
+CPU switches from one process to another.
+
+This switching is called:
+
+👉 Context Switching
+
+🧠 Real-World Analogy
+
+Imagine you are:
+
+watching YouTube
+
+coding
+
+chatting
+
+You switch tasks constantly.
+
+Before switching, your brain remembers:
+
+what you were doing
+
+where you stopped
+
+That memory = context
+
+⚙️ Why It Exists
+
+CPU can run only one process at a time (per core).
+
+But we want:
+
+Multitasking experience
+
+So OS quickly switches processes.
+
+⚙️ How It Works Internally
+
 Step-by-step:
 
-1️⃣ Scheduler
+1️⃣ Save current process data into PCB
+2️⃣ Load next process data from PCB
+3️⃣ CPU starts executing new process
 
-Runs every few seconds
+Process A → (save state)
+Process B → (load state)
+🔗 Connection to PCB (Day 1)
 
-Triggers checks
+PCB stores:
 
-2️⃣ Checker (Your code)
+Registers
+Program counter
+State
 
-Ping / HTTP / TCP / DNS
+During context switch:
+
+👉 PCB is used to save & restore process
+
+⚠️ Important Point
+
+Context switching is overhead (no real work done).
+
+So too many switches = slow system.
+
+🎯 Placement Question
+
+Q: What is context switching?
+
+👉 Saving current process state and loading another process state to switch CPU execution.
+
+🧠 Memory Trick
+Context switch = Pause → Save → Load → Resume
+⚙️ COA Concept 3: Instruction Cycle
+
+Now we go inside CPU deeply.
+
+1️⃣ Simple Idea
+
+CPU works in a loop:
+
+👉 Fetch → Decode → Execute
+
+🔥 This is the HEART of computer
+
+\text{Instruction Cycle: Fetch \rightarrow Decode \rightarrow Execute}
+
+🧠 Real-World Analogy
+
+Think of cooking:
+
+1️⃣ Read recipe → (Fetch)
+2️⃣ Understand → (Decode)
+3️⃣ Cook → (Execute)
+
+⚙️ Step-by-Step Working
+1️⃣ Fetch
+
+CPU gets instruction from memory.
+
+Using:
+
+👉 Program Counter (PC)
+
+2️⃣ Decode
+
+Control unit understands instruction.
 
 Example:
 
-CheckHTTP("google.com")
+ADD R1 R2
+3️⃣ Execute
 
-3️⃣ Result
+ALU performs operation.
 
-Status: Online
-Response: 45ms
+R1 + R2
+🔗 Connection to Registers
 
-4️⃣ Database
+PC → next instruction
 
-Stores results for history
+IR → current instruction
 
-5️⃣ Alert
+Registers → hold data
 
-Sends message if server is down
+🎯 Placement Question
 
-6️⃣ API
+Q: What are stages of instruction cycle?
 
-Sends data to frontend
+👉 Fetch, Decode, Execute
 
-🔥 Core Concept: Concurrency (VERY IMPORTANT)
-Why Go is used?
+🧠 Memory Trick
+FDE = Fetch Decode Execute
+⚙️ COA Concept 4: Addressing Modes
 
-Because of goroutines
+This is asked a lot in interviews.
 
-Example:
-go CheckHTTP("google.com")
-go CheckPing("github.com")
+1️⃣ Simple Idea
 
-👉 Both run at the same time
+Addressing mode =
+👉 How CPU finds data for instruction
 
-Real-life analogy
+🧠 Real-World Analogy
 
-Instead of:
+If I say:
 
-Check 1 → Wait → Check 2 → Wait → Check 3
+👉 "Bring book"
 
-Go does:
+You ask:
 
-Check 1
-Check 2
-Check 3   (ALL at once 🚀)
-💡 Key Concepts You Used Today
-Concept	Where used
-Struct	CheckResult, Server
-Package	checkers, alerts
-Concurrency	goroutines
-Networking	ping, http, tcp
-Error handling	if err != nil
-Modules	go.mod
-🎯 Placement Insight
+Which book?
 
-Interview question:
+Where is it?
 
-👉 Why Go for monitoring systems?
+That is addressing.
 
-Answer:
+⚙️ Types (Important Ones)
+1️⃣ Immediate Addressing
 
-Go is used because it supports lightweight concurrency using goroutines,
-which allows monitoring thousands of servers simultaneously with low memory usage.
-🧩 Mini Practice (Very Important)
+Data is inside instruction
 
-Try this simple program:
+MOV R1, 5
 
-package main
+👉 Value = 5 (direct)
 
-import (
-	"fmt"
-	"net/http"
-)
+2️⃣ Direct Addressing
 
-func main() {
-	resp, err := http.Get("https://google.com")
+Instruction contains memory address
 
-	if err != nil {
-		fmt.Println("Server Down ❌")
-		return
-	}
+MOV R1, [1000]
 
-	defer resp.Body.Close()
+👉 Go to memory 1000
 
-	fmt.Println("Server Status:", resp.Status)
-}
-🧠 10 MOST ASKED Computer Network Interview Questions
+3️⃣ Register Addressing
 
-(As you requested daily)
+Data is in register
 
-What is TCP vs UDP?
+MOV R1, R2
 
-What is DNS and how it works?
+👉 Use R2 value
 
-What is HTTP vs HTTPS?
+4️⃣ Indirect Addressing
 
-What is latency?
+Register contains address
 
-What is packet loss?
+MOV R1, [R2]
 
-What is port number?
+👉 R2 → address → data
 
-What is ping?
+⚙️ Why Addressing Modes Exist
 
-What is subnet?
+To:
 
-What is firewall?
+make instructions flexible
 
-What is load balancing?
+improve performance
 
-🧠 Quick Revision
-Monitoring System = Checking servers continuously
-Go = Fast + Concurrent
-Checkers = Ping, HTTP, TCP, DNS
-Alerts = Notify when failure
+reduce memory usage
+
+🔗 Connection to Programming
+
+In C:
+
+int x = 5;
+int *p = &x;
+
+👉 pointer = indirect addressing
+
+🎯 Placement Question
+
+Q: What is immediate vs direct addressing?
+
+👉 Immediate = value inside instruction
+👉 Direct = value from memory address
+
+🧠 Memory Trick
+Immediate = instant value
+Direct = direct memory
+Register = inside CPU
+Indirect = address of address
+📌 Today’s Summary
+🧠 OS
+
+✔ Process States
+✔ Context Switching
+
+⚙️ COA
+
+✔ Instruction Cycle
+✔ Addressing Modes
+
+🧠 Self-Test (Must Do)
+
+1️⃣ Why does process move to waiting state?
+2️⃣ What is saved during context switch?
+3️⃣ What does Program Counter do?
+4️⃣ Difference between direct & indirect addressing?

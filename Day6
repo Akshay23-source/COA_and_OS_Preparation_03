@@ -1,0 +1,229 @@
+🧠 OS Concept 1: Mutex
+1️⃣ Simple Idea
+
+Mutex =
+👉 lock to allow only ONE thread at a time
+
+🧠 Real-World Analogy
+
+🚻 Washroom with a lock
+
+One person locks → enters
+Others must wait
+
+👉 That lock = Mutex
+
+⚙️ Why It Exists
+
+From Day 4:
+
+👉 Critical section problem
+
+Multiple threads accessing same data:
+
+balance = balance - 100
+
+Without control → wrong result ❌
+
+⚙️ How It Works
+lock()
+   critical section
+unlock()
+
+If locked:
+
+👉 other threads must wait
+
+🔗 Connection to Threads
+
+Threads share memory →
+👉 need mutex to avoid conflict
+
+🎯 Placement Question
+
+Q: What is mutex?
+
+👉 A locking mechanism to ensure mutual exclusion in critical section.
+
+🧠 Memory Trick
+Mutex = Mutual Exclusion = ONE at a time
+🧠 OS Concept 2: Semaphore
+1️⃣ Simple Idea
+
+Semaphore =
+👉 counter-based control for multiple threads
+
+🧠 Real-World Analogy
+
+Parking lot 🅿️
+
+5 slots available
+5 cars allowed
+If full → others wait
+
+👉 That count = semaphore
+
+⚙️ Types of Semaphore
+1️⃣ Binary Semaphore
+0 or 1
+
+👉 Same as mutex
+
+2️⃣ Counting Semaphore
+0,1,2,3...
+
+👉 Multiple threads allowed
+
+⚙️ Operations
+wait()  → decrease count
+signal() → increase count
+⚙️ Example
+Semaphore = 3
+
+Thread1 → enter (2)
+Thread2 → enter (1)
+Thread3 → enter (0)
+Thread4 → wait
+🔗 Difference from Mutex
+Feature	Mutex	Semaphore
+Access	1 thread	multiple
+Type	lock	counter
+Ownership	yes	no
+🎯 Placement Question
+
+Q: Difference between mutex and semaphore?
+
+👉 Mutex = one thread
+👉 Semaphore = multiple threads
+
+🧠 Memory Trick
+Mutex = ONE
+Semaphore = MANY
+⚙️ COA Concept 3: Memory Hierarchy
+
+🔥 One of the MOST IMPORTANT concepts
+
+1️⃣ Simple Idea
+
+Memory is arranged in levels:
+
+👉 faster → smaller → expensive
+👉 slower → larger → cheaper
+
+🔥 Structure
+Registers
+Cache
+RAM
+Disk
+🧠 Real-World Analogy
+
+Study table 📚
+
+In hand → Registers
+Table → Cache
+Shelf → RAM
+Store room → Disk
+
+Closer = faster
+
+⚙️ Why It Exists
+
+We need:
+
+speed (CPU fast)
+storage (disk large)
+
+👉 Cannot have both in one memory
+
+So hierarchy is used.
+
+⚙️ Key Idea
+Frequently used data → higher levels
+🔗 Connection to Registers (Day 1)
+
+Registers = fastest memory
+
+Used directly by CPU
+
+🎯 Placement Question
+
+Q: Why cache memory is used?
+
+👉 To reduce access time and speed up execution.
+
+🧠 Memory Trick
+Top = Fast & Small
+Bottom = Slow & Large
+⚙️ COA Concept 4: Cache Memory
+1️⃣ Simple Idea
+
+Cache =
+👉 small, very fast memory between CPU and RAM
+
+🧠 Real-World Analogy
+
+Kitchen shortcut 🍳
+
+Instead of going to store room (RAM),
+
+you keep items near you (cache).
+
+⚙️ Why It Works (Very Important 🔥)
+
+Because of:
+
+👉 Locality of Reference
+
+🔹 Temporal Locality
+
+Recently used data → used again
+
+Example:
+
+for(i=0;i<10;i++)
+
+👉 i used again & again
+
+🔹 Spatial Locality
+
+Nearby data likely used
+
+Example:
+
+arr[0], arr[1], arr[2]
+⚙️ How Cache Works
+
+1️⃣ CPU checks cache
+2️⃣ If found → cache hit ✅
+3️⃣ Else → fetch from RAM → cache miss ❌
+
+🔗 Connection to Performance
+
+More cache hits → faster system
+
+🎯 Placement Question
+
+Q: What is cache hit and miss?
+
+👉 Hit = data found in cache
+👉 Miss = data fetched from RAM
+
+🧠 Memory Trick
+Cache = Frequently used data storage
+📌 Today’s Summary
+🧠 OS
+
+✔ Mutex
+✔ Semaphore
+
+⚙️ COA
+
+✔ Memory Hierarchy
+✔ Cache Memory
+
+🧠 Self-Test (Must Do)
+
+1️⃣ Why is mutex needed?
+2️⃣ Difference between semaphore and mutex?
+3️⃣ Why is cache faster than RAM?
+4️⃣ What is locality of reference?

@@ -1,0 +1,229 @@
+Today’s topics are VERY IMPORTANT for interviews
+These decide whether you look average or strong candidate.
+
+🧠 OS Concept 1: Page Replacement Algorithms
+1️⃣ Simple Idea
+
+When RAM is full and a new page comes:
+
+👉 OS must decide which page to remove
+
+That decision = Page Replacement Algorithm
+
+🧠 Real-World Analogy
+
+Imagine your bag 🎒 is full.
+
+You need to add a new book.
+
+You must remove one:
+
+oldest book?
+least used?
+random?
+
+That decision = algorithm
+
+⚙️ Why It Exists
+
+RAM is limited:
+
+Pages > Frames
+
+So replacement is necessary.
+
+⚙️ Important Algorithms
+1️⃣ FIFO (First In First Out)
+
+👉 Remove oldest page
+
+[1,2,3] → remove 1
+
+❌ Problem: may remove useful page
+
+2️⃣ LRU (Least Recently Used) 🔥
+
+👉 Remove least recently used page
+
+✔ Smart
+✔ Most asked
+
+3️⃣ Optimal (Best but theoretical)
+
+👉 Remove page not used for longest future
+
+✔ Best performance
+❌ Not practical (future unknown)
+
+🔗 Connection to Cache (Day 5)
+
+Cache also uses similar logic:
+
+👉 replacement policies
+
+🎯 Placement Question
+
+Q: Which page replacement algorithm is best?
+
+👉 Optimal (theoretical), LRU (practical)
+
+🧠 Memory Trick
+FIFO = oldest out
+LRU = least used out
+🧠 OS Concept 2: Thrashing
+1️⃣ Simple Idea
+
+Thrashing =
+👉 system spends more time swapping pages than executing
+
+🧠 Real-World Analogy
+
+Studying but constantly:
+
+switching books
+not actually learning
+
+👉 zero productivity
+
+⚙️ Why It Happens
+
+When:
+
+Too many processes
+Too little memory
+⚙️ What Happens
+Page fault ↑
+CPU utilization ↓
+System slow
+🔗 Connection to Paging
+
+Thrashing occurs due to:
+
+👉 excessive paging
+
+🎯 Placement Question
+
+Q: What is thrashing?
+
+👉 High paging activity leading to low CPU utilization.
+
+🧠 Memory Trick
+Thrashing = working hard, achieving nothing
+⚙️ COA Concept 3: I/O Organization
+1️⃣ Simple Idea
+
+I/O =
+👉 communication between CPU and devices
+
+Devices:
+
+keyboard
+mouse
+disk
+printer
+🧠 Real-World Analogy
+
+Manager talking to workers 🧑‍💼
+
+CPU = manager
+Devices = workers
+⚙️ Methods of I/O
+1️⃣ Programmed I/O
+
+CPU checks device continuously
+
+"Are you done?"
+"Are you done?"
+
+❌ Waste of CPU
+
+2️⃣ Interrupt Driven I/O
+
+Device interrupts CPU when done
+
+✔ Efficient
+
+3️⃣ DMA (Next topic)
+
+👉 Direct transfer
+
+🔗 Connection to Interrupts (Day 6)
+
+Interrupt I/O uses:
+
+👉 interrupts
+
+🎯 Placement Question
+
+Q: Why interrupt I/O is better than programmed I/O?
+
+👉 CPU does not waste time waiting.
+
+🧠 Memory Trick
+Programmed = CPU waits
+Interrupt = Device informs
+⚙️ COA Concept 4: DMA (Direct Memory Access)
+
+🔥 VERY IMPORTANT
+
+1️⃣ Simple Idea
+
+DMA =
+👉 devices transfer data directly to memory without CPU
+
+🧠 Real-World Analogy
+
+Instead of boss doing all work:
+
+👉 assigns work directly to worker
+
+Boss = CPU
+Worker = DMA controller
+
+⚙️ Without DMA
+Device → CPU → Memory
+
+CPU busy ❌
+
+⚙️ With DMA
+Device → Memory (direct)
+
+CPU free ✔
+
+⚙️ How It Works
+
+1️⃣ CPU gives instruction
+2️⃣ DMA handles transfer
+3️⃣ DMA sends interrupt when done
+
+🔗 Connection to I/O
+
+DMA improves:
+
+👉 I/O performance
+
+🎯 Placement Question
+
+Q: What is DMA?
+
+👉 Technique where data transfer happens directly between device and memory without CPU involvement.
+
+🧠 Memory Trick
+DMA = Direct Memory Access (no CPU)
+📌 Today’s Summary
+🧠 OS
+
+✔ Page Replacement Algorithms
+✔ Thrashing
+
+⚙️ COA
+
+✔ I/O Organization
+✔ DMA
+
+🧠 Self-Test (VERY IMPORTANT)
+
+1️⃣ Why LRU is better than FIFO?
+2️⃣ What causes thrashing?
+3️⃣ Difference between programmed and interrupt I/O?
+4️⃣ Why DMA is faster?

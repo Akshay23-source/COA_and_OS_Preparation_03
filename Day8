@@ -1,0 +1,231 @@
+🧠 OS Concept 1: System Calls
+1️⃣ Simple Idea
+
+System Call =
+👉 way for a program to request OS services
+
+🧠 Real-World Analogy
+
+You (user program) cannot directly access:
+
+bank vault
+government system
+
+You must request through official channel
+
+👉 That channel = system call
+
+⚙️ Why It Exists
+
+User programs cannot directly access hardware ❌
+(OS protects system)
+
+So they use:
+
+👉 System calls
+
+⚙️ Example
+
+In C:
+
+printf("Hello");
+
+Internally:
+
+write() → system call
+⚙️ Types of System Calls
+Process control  → create process
+File management  → open, read, write
+Device management
+Memory management
+🔗 Connection to Interrupts (Day 6)
+
+System calls use:
+
+👉 software interrupts
+
+🎯 Placement Question
+
+Q: What is a system call?
+
+👉 Interface between user program and OS.
+
+🧠 Memory Trick
+System Call = Asking OS for help
+🧠 OS Concept 2: User Mode vs Kernel Mode
+1️⃣ Simple Idea
+
+CPU works in 2 modes:
+
+User Mode   → restricted
+Kernel Mode → full access
+🧠 Real-World Analogy
+
+🏫 College:
+
+Students → limited access
+Principal → full control
+⚙️ Why It Exists
+
+To protect system from:
+
+malicious programs
+accidental damage
+⚙️ How It Works
+
+1️⃣ Program runs in user mode
+2️⃣ Needs OS → makes system call
+3️⃣ Switch to kernel mode
+4️⃣ OS does work
+5️⃣ Back to user mode
+
+🔗 Connection to System Calls
+
+System calls trigger:
+
+👉 mode switch
+
+🎯 Placement Question
+
+Q: Why do we need dual mode operation?
+
+👉 To ensure security and controlled access to hardware.
+
+🧠 Memory Trick
+User = Limited
+Kernel = King 👑
+⚙️ COA Concept 3: Instruction Pipeline Hazards
+
+(Continuation of pipelining Day 4)
+
+1️⃣ Simple Idea
+
+Hazards =
+👉 problems that stop smooth pipelining
+
+🧠 Real-World Analogy
+
+Assembly line stops because:
+
+missing part
+wrong order
+machine conflict
+⚙️ Types of Hazards
+1️⃣ Data Hazard
+
+Instruction depends on previous result
+
+I1: A = B + C
+I2: D = A + E
+
+👉 I2 must wait
+
+2️⃣ Control Hazard
+
+Branch instruction
+
+if (x > 0)
+
+CPU doesn’t know next instruction
+
+3️⃣ Structural Hazard
+
+Hardware conflict
+
+👉 two instructions need same resource
+
+🔗 Connection to Pipelining
+
+Hazards reduce:
+
+👉 performance
+
+🎯 Placement Question
+
+Q: What are pipeline hazards?
+
+👉 Data, Control, Structural hazards
+
+🧠 Memory Trick
+DCS → Data, Control, Structural
+⚙️ COA Concept 4: Cache Mapping Techniques
+
+🔥 Frequently asked
+
+1️⃣ Simple Idea
+
+Cache mapping =
+👉 how memory blocks are placed in cache
+
+🧠 Real-World Analogy
+
+Parking system 🅿️
+
+How cars are assigned slots
+
+⚙️ Types
+1️⃣ Direct Mapping
+
+👉 One memory block → one cache line
+
+✔ Simple
+❌ conflict possible
+
+2️⃣ Fully Associative
+
+👉 Block can go anywhere
+
+✔ Flexible
+❌ expensive
+
+3️⃣ Set Associative 🔥
+
+👉 Combination of both
+
+✔ balanced approach
+✔ used in real systems
+
+🔗 Connection to Cache (Day 5)
+
+Mapping decides:
+
+👉 cache performance
+
+🎯 Placement Question
+
+Q: Which cache mapping is best?
+
+👉 Set associative (balance of speed & flexibility)
+
+🧠 Memory Trick
+Direct = fixed
+Associative = anywhere
+Set = hybrid
+📌 Today’s Summary
+🧠 OS
+
+✔ System Calls
+✔ User Mode vs Kernel Mode
+
+⚙️ COA
+
+✔ Pipeline Hazards
+✔ Cache Mapping
+
+🧠 Self-Test (Must Do)
+
+1️⃣ Why system calls are needed?
+2️⃣ Difference between user and kernel mode?
+3️⃣ What are 3 pipeline hazards?
+4️⃣ Which cache mapping is most practical?
+
+🚀 Day 9 Preview (INTERVIEW BOOST 🔥)
+
+Next topics:
+
+OS
+Fork & Exec
+Zombie Process
+COA
+RISC vs CISC
+Performance Metrics

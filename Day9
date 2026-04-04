@@ -1,0 +1,220 @@
+🧠 OS Concept 1: Fork & Exec
+1️⃣ Simple Idea
+
+👉 fork() = create a new process
+👉 exec() = replace process with a new program
+
+🧠 Real-World Analogy
+
+Imagine:
+
+You clone yourself 👥 → fork
+Then one clone changes job → exec
+⚙️ Why It Exists
+
+OS needs to:
+
+create new processes
+run different programs
+⚙️ How fork() Works
+int pid = fork();
+
+After fork:
+
+Parent Process
+Child Process (copy)
+
+Both run same code but have different:
+
+👉 PID (Process ID)
+
+⚙️ How exec() Works
+exec("new_program");
+
+👉 Current process is replaced completely
+
+🔗 Connection to Process (Day 1)
+fork → creates new process
+exec → loads new program into process
+🎯 Placement Question
+
+Q: Difference between fork and exec?
+
+👉 fork = creates new process
+👉 exec = replaces process program
+
+🧠 Memory Trick
+fork = copy
+exec = execute new
+🧠 OS Concept 2: Zombie Process
+1️⃣ Simple Idea
+
+Zombie =
+👉 process that has finished execution but still exists in process table
+
+🧠 Real-World Analogy
+
+Student finished exam but:
+
+👉 result not collected yet
+
+Still in system.
+
+⚙️ Why It Happens
+
+When:
+
+1️⃣ Child process finishes
+2️⃣ Parent does NOT read its status
+
+👉 child becomes zombie
+
+⚙️ What It Contains
+
+Only:
+
+PID
+Exit status
+
+(No memory, no execution)
+
+⚙️ How to Remove
+
+Parent must call:
+
+wait()
+🔗 Connection to PCB
+
+Zombie still has entry in:
+
+👉 Process Control Block (PCB)
+
+🎯 Placement Question
+
+Q: What is zombie process?
+
+👉 A terminated process whose entry remains in process table.
+
+🧠 Memory Trick
+Zombie = dead but still present
+⚙️ COA Concept 3: RISC vs CISC
+
+🔥 VERY COMMON INTERVIEW QUESTION
+
+1️⃣ Simple Idea
+
+Two types of CPU design:
+
+👉 RISC = simple instructions
+👉 CISC = complex instructions
+
+🧠 Real-World Analogy
+RISC
+
+👉 Many simple steps
+
+Like:
+
+Pick → Cut → Cook → Serve
+CISC
+
+👉 One complex step
+
+"Prepare full dish"
+⚙️ Differences
+Feature	RISC	CISC
+Instructions	simple	complex
+Speed	faster	slower
+Memory	more	less
+Examples	ARM	x86
+⚙️ Why RISC is Faster
+
+Because:
+
+👉 simpler instructions → faster execution → better pipelining
+
+🔗 Connection to Pipelining (Day 4)
+
+RISC works better with:
+
+👉 pipelining
+
+🎯 Placement Question
+
+Q: Difference between RISC and CISC?
+
+👉 RISC = simple, fast
+👉 CISC = complex, fewer instructions
+
+🧠 Memory Trick
+RISC = Reduced
+CISC = Complex
+⚙️ COA Concept 4: Performance Metrics
+
+🔥 VERY IMPORTANT FOR INTERVIEW
+
+1️⃣ Simple Idea
+
+Performance =
+👉 how fast a program runs
+
+⚙️ Key Formula
+
+CPU Time
+=
+Instruction Count
+×
+CPI
+×
+Clock Cycle Time
+CPU Time=Instruction Count×CPI×Clock Cycle Time
+
+🧠 Meaning
+Instruction Count → number of instructions
+CPI → cycles per instruction
+Clock time → speed of CPU
+⚙️ Important Terms
+1️⃣ Throughput
+
+👉 how many tasks per second
+
+2️⃣ Latency
+
+👉 time for one task
+
+3️⃣ Clock Speed
+
+👉 cycles per second
+
+🔗 Connection to CPU
+
+Performance improves when:
+
+fewer instructions
+lower CPI
+faster clock
+🎯 Placement Question
+
+Q: How to improve CPU performance?
+
+👉 reduce instruction count, CPI, or increase clock speed
+
+🧠 Memory Trick
+Performance = Work / Time
+📌 Today’s Summary
+🧠 OS
+
+✔ Fork & Exec
+✔ Zombie Process
+
+⚙️ COA
+
+✔ RISC vs CISC
+✔ Performance Metrics
+
+🧠 Self-Test (Must Answer)
+
+1️⃣ What happens after fork()?
+2️⃣ Why zombie process occurs?
+3️⃣ Why RISC is faster?
+4️⃣ What affects CPU performance?

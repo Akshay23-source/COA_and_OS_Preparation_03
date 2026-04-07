@@ -1,0 +1,230 @@
+🧠 OS Concept 1: Process vs Thread (Deep Interview Level)
+
+You already know basics → now let’s go deeper (INTERVIEW LEVEL)
+
+1️⃣ Core Difference (Refined)
+Feature	Process	Thread
+Memory	Separate	Shared
+Creation	Slow	Fast
+Communication	IPC needed	Direct
+Crash impact	isolated	affects all
+🧠 Real Understanding (Important)
+
+👉 Process = independent execution unit
+👉 Thread = sub-task inside process
+
+🧠 Deep Insight (What Interviewers Want)
+Why threads are faster?
+
+Because:
+
+❌ No separate memory allocation
+❌ No heavy context switching
+
+✔ Shared resources → less overhead
+
+⚙️ Internal Working
+Process switch:
+Save memory + registers + PCB → heavy
+Thread switch:
+Only registers + stack → lightweight
+🔗 Connection to Context Switching (Day 2)
+
+Thread switching is:
+
+👉 faster than process switching
+
+🎯 Tricky Interview Question
+
+Q: If threads share memory, why is it dangerous?
+
+👉 Because it can cause race conditions & data inconsistency
+
+🧠 Memory Trick
+Process = independent
+Thread = shared
+🧠 OS Concept 2: User-Level vs Kernel-Level Threads
+
+🔥 VERY IMPORTANT (asked in good companies)
+
+1️⃣ Simple Idea
+
+Threads can be managed by:
+
+👉 User (library)
+👉 OS (kernel)
+
+⚙️ Types
+1️⃣ User-Level Threads
+
+Managed by:
+
+👉 user program (not OS)
+
+✔ Fast
+❌ If one thread blocks → all block
+
+2️⃣ Kernel-Level Threads
+
+Managed by:
+
+👉 OS
+
+✔ True parallelism
+✔ Better control
+❌ Slightly slower
+
+🧠 Real-World Analogy
+User threads
+
+Students managing group work themselves
+
+Kernel threads
+
+Teacher managing everything
+
+🔗 Connection to Multithreading
+
+Modern OS uses:
+
+👉 kernel-level threads
+
+🎯 Placement Question
+
+Q: Difference between user-level and kernel-level threads?
+
+👉 User = fast but limited
+👉 Kernel = slower but powerful
+
+🧠 Memory Trick
+User = fast but weak
+Kernel = strong but controlled
+⚙️ COA Concept 3: Instruction-Level Parallelism (ILP)
+1️⃣ Simple Idea
+
+ILP =
+👉 executing multiple instructions at same time inside CPU
+
+🧠 Real-World Analogy
+
+Chef cooking multiple things:
+
+cutting vegetables
+boiling water
+frying
+
+All together
+
+⚙️ How It Works
+
+CPU finds:
+
+👉 independent instructions
+
+I1: A = B + C
+I2: D = E + F
+
+Both can run parallel
+
+🔗 Connection to Pipelining (Day 4)
+
+Pipelining is a form of:
+
+👉 ILP
+
+🎯 Placement Question
+
+Q: What is ILP?
+
+👉 Ability of CPU to execute multiple instructions simultaneously.
+
+🧠 Memory Trick
+ILP = Many instructions together
+⚙️ COA Concept 4: Amdahl’s Law
+
+🔥 VERY IMPORTANT (top companies ask)
+
+1️⃣ Simple Idea
+
+Amdahl’s Law =
+👉 limits of parallel processing
+
+🔥 Core Formula
+
+Speedup
+=
+1
+(
+1
+−
+𝑃
+)
++
+𝑃
+𝑁
+Speedup=
+(1−P)+
+N
+P
+	​
+
+1
+	​
+
+
+🧠 Meaning
+P → parallel part
+N → number of processors
+🧠 Real Understanding
+
+Even if you add many CPUs:
+
+👉 speed improvement is limited
+
+Because:
+
+👉 some part is always sequential
+
+🧠 Real-World Analogy
+
+Group project:
+
+some work done together
+some work done individually
+
+Total speed depends on:
+
+👉 slowest part
+
+🔗 Connection to Parallel Processing (Day 10)
+
+Parallel systems are limited by:
+
+👉 Amdahl’s Law
+
+🎯 Placement Question
+
+Q: Why parallel processing has limits?
+
+👉 Due to sequential part of program (Amdahl’s Law)
+
+🧠 Memory Trick
+Speed limited by non-parallel part
+📌 Today’s Summary
+🧠 OS
+
+✔ Process vs Thread (Deep)
+✔ User vs Kernel Threads
+
+⚙️ COA
+
+✔ Instruction-Level Parallelism
+✔ Amdahl’s Law
+
+🧠 Self-Test (INTERVIEW LEVEL)
+
+1️⃣ Why threads are faster than processes?
+2️⃣ Why user-level threads can block completely?
+3️⃣ What is ILP?
+4️⃣ Why speedup is limited in parallel systems?
+

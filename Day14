@@ -1,0 +1,219 @@
+🧠 OS Concept 1: Trap vs Interrupt vs System Call (VERY CONFUSING 🔥)
+
+This is a favorite interview trap question
+
+1️⃣ Simple Idea
+
+All 3 mean:
+
+👉 CPU changes normal execution
+
+But WHY they occur is different
+
+🧠 Core Difference
+Type	Who triggers	Why
+Interrupt	Hardware	external event
+Trap	CPU	error or exception
+System Call	Program	request OS
+🧠 Real-World Analogy
+
+You studying 📚:
+
+Phone rings → Interrupt
+You make mistake → Trap
+You ask teacher → System Call
+⚙️ Deep Understanding
+🔹 Interrupt
+
+From devices:
+
+keyboard
+mouse
+disk
+
+👉 asynchronous
+
+🔹 Trap
+
+From CPU:
+
+divide by zero
+invalid instruction
+
+👉 synchronous
+
+🔹 System Call
+
+From program:
+
+read(), write()
+
+👉 controlled request
+
+🔗 Connection
+
+System call uses:
+
+👉 trap mechanism internally
+
+🎯 Placement Question
+
+Q: Difference between interrupt and trap?
+
+👉 Interrupt = external
+👉 Trap = internal
+
+🧠 Memory Trick
+Interrupt = outside
+Trap = inside error
+Syscall = request
+🧠 OS Concept 2: Preemptive vs Non-Preemptive Scheduling
+
+🔥 VERY COMMON QUESTION
+
+1️⃣ Simple Idea
+
+👉 Can OS take CPU away from process or not?
+
+⚙️ Types
+🔹 Non-Preemptive
+
+👉 Once process starts → runs until finish
+
+Example:
+
+FCFS
+SJF
+
+❌ Poor responsiveness
+
+🔹 Preemptive
+
+👉 OS can interrupt process anytime
+
+Example:
+
+Round Robin
+
+✔ Better responsiveness
+
+🧠 Real-World Analogy
+Non-preemptive
+
+One person talks fully in meeting
+
+Preemptive
+
+Teacher interrupts:
+
+👉 “Time’s up, next!”
+
+🔗 Connection to Context Switching
+
+Preemptive → more context switches
+
+🎯 Placement Question
+
+Q: Why preemptive scheduling is better?
+
+👉 improves responsiveness and fairness
+
+🧠 Memory Trick
+Preemptive = interrupt allowed
+Non-preemptive = no interruption
+⚙️ COA Concept 3: Throughput vs Latency (IMPORTANT)
+1️⃣ Simple Idea
+
+Two performance measures:
+
+👉 Throughput = how many tasks done
+👉 Latency = time for one task
+
+🧠 Real-World Analogy
+
+Restaurant 🍽️
+
+Throughput → customers per hour
+Latency → time for one order
+⚙️ Example
+
+System A:
+
+10 tasks/sec (high throughput)
+5 sec per task (high latency)
+
+System B:
+
+5 tasks/sec
+2 sec per task
+🔗 Connection to Performance (Day 9)
+
+Both define system performance
+
+🎯 Placement Question
+
+Q: Difference between throughput and latency?
+
+👉 Throughput = total work
+👉 Latency = time per work
+
+🧠 Memory Trick
+Throughput = quantity
+Latency = delay
+⚙️ COA Concept 4: Speedup & Efficiency
+1️⃣ Simple Idea
+
+Speedup =
+👉 how much faster system becomes
+
+Efficiency =
+👉 how well resources are used
+
+🔥 Core Formula
+
+Speedup
+=
+Time (old)
+Time (new)
+Speedup=
+Time (new)
+Time (old)
+	​
+
+
+🧠 Meaning
+
+If:
+
+Old time = 10 sec
+New time = 5 sec
+
+👉 Speedup = 2
+
+⚙️ Efficiency
+Efficiency = Speedup / Number of processors
+🔗 Connection to Amdahl’s Law (Day 11)
+
+Speedup is limited due to:
+
+👉 sequential part
+
+🎯 Placement Question
+
+Q: What is speedup?
+
+👉 Ratio of old execution time to new execution time.
+
+🧠 Memory Trick
+Speedup = faster factor
+Efficiency = usage quality
+📌 Today’s Summary
+🧠 OS
+
+✔ Trap vs Interrupt vs System Call
+✔ Preemptive vs Non-Preemptive
+
+⚙️ COA
+
+✔ Throughput vs Latency
+✔ Speedup & Efficiency

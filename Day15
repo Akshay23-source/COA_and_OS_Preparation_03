@@ -1,0 +1,234 @@
+🧠 OS Concept 1: Race Condition (VERY IMPORTANT 🔥)
+1️⃣ Simple Idea
+
+Race Condition =
+👉 multiple processes access shared data and result depends on execution order
+
+🧠 Real-World Analogy
+
+2 people editing same Google Doc:
+
+Person A writes → 100
+Person B writes → 200
+
+Final result depends on:
+
+👉 who saved last
+
+⚙️ Why It Happens
+
+Because of:
+
+No synchronization
+Shared memory
+⚙️ Example
+balance = 1000
+
+Thread1 → balance - 100
+Thread2 → balance - 200
+
+Expected:
+
+👉 700
+
+But actual may be:
+
+👉 800 ❌ (wrong)
+
+🔗 Connection
+
+From Day 4:
+
+👉 Critical Section problem
+
+Solution:
+
+👉 Mutex / Semaphore
+
+🎯 Placement Question
+
+Q: What is race condition?
+
+👉 When multiple threads access shared data leading to unpredictable results.
+
+🧠 Memory Trick
+Race = who finishes first decides result
+🧠 OS Concept 2: Starvation & Aging
+1️⃣ Starvation
+
+👉 Process never gets CPU
+
+🧠 Real-World Analogy
+
+In queue:
+
+VIP always gets priority
+Normal person never gets chance
+
+⚙️ Why It Happens
+
+In:
+
+👉 Priority scheduling
+
+2️⃣ Aging (Solution)
+
+👉 gradually increase priority over time
+
+So eventually:
+
+👉 every process gets CPU
+
+🔗 Connection to Scheduling (Day 3)
+
+Advanced scheduling concept
+
+🎯 Placement Question
+
+Q: What is starvation? How to solve it?
+
+👉 Starvation = process waits forever
+👉 Solution = Aging
+
+🧠 Memory Trick
+Starvation = no chance
+Aging = give chance slowly
+⚙️ COA Concept 3: Memory Bandwidth vs Latency
+1️⃣ Simple Idea
+
+👉 Bandwidth = how much data per second
+👉 Latency = delay to access data
+
+🧠 Real-World Analogy
+
+Internet 📶
+
+Bandwidth → speed (MB/s)
+Latency → ping delay
+⚙️ Example
+High bandwidth, high latency → bulk transfer
+Low latency → quick response
+🔗 Connection to Memory Hierarchy (Day 5)
+
+Cache:
+
+👉 low latency
+RAM:
+
+👉 higher latency
+
+🎯 Placement Question
+
+Q: Difference between bandwidth and latency?
+
+👉 Bandwidth = amount
+👉 Latency = delay
+
+🧠 Memory Trick
+Bandwidth = quantity
+Latency = delay
+⚙️ COA Concept 4: Multi-core vs Multi-processor
+
+🔥 VERY COMMON CONFUSION
+
+1️⃣ Simple Idea
+Multi-core
+
+👉 One CPU with multiple cores
+
+Multi-processor
+
+👉 Multiple CPUs
+
+🧠 Real-World Analogy
+Multi-core
+
+One person with multiple hands 🖐️
+
+Multi-processor
+
+Multiple people working 👨‍👨‍👦
+
+⚙️ Difference
+Feature	Multi-core	Multi-processor
+CPUs	1	many
+Cost	low	high
+Communication	faster	slower
+🔗 Connection to Parallel Processing (Day 10)
+
+Both enable:
+
+👉 parallel execution
+
+🎯 Placement Question
+
+Q: Difference between multi-core and multi-processor?
+
+👉 Multi-core = one CPU many cores
+👉 Multi-processor = many CPUs
+
+🧠 Memory Trick
+Core = inside CPU
+Processor = whole CPU
+🎯 REAL PLACEMENT MCQs (IMPORTANT)
+🧠 Q1 (TCS Level)
+
+Which condition causes race condition?
+
+A) Single process
+B) Shared memory without synchronization
+C) Large memory
+D) Fast CPU
+
+👉 Answer: B
+
+🧠 Q2 (Infosys Level)
+
+Which scheduling avoids starvation?
+
+A) FCFS
+B) Priority
+C) Aging
+D) SJF
+
+👉 Answer: C
+
+🧠 Q3 (Accenture Level)
+
+Latency refers to:
+
+A) Data size
+B) Delay in access
+C) CPU speed
+D) Memory size
+
+👉 Answer: B
+
+🧠 Q4 (Product Company)
+
+Multi-core systems improve:
+
+A) Storage
+B) Parallel processing
+C) Disk speed
+D) Network
+
+👉 Answer: B
+
+📌 Today’s Summary
+🧠 OS
+
+✔ Race Condition
+✔ Starvation & Aging
+
+⚙️ COA
+
+✔ Bandwidth vs Latency
+✔ Multi-core vs Multi-processor
+
+🧠 Self-Test (FINAL PRACTICE)
+
+1️⃣ Why race condition occurs?
+2️⃣ How aging solves starvation?
+3️⃣ Bandwidth vs latency?
+4️⃣ Core vs processor?

@@ -1,0 +1,186 @@
+🔥 Today = FULL REVISION + RAPID-FIRE INTERVIEW TRAINING
+Goal: Make everything stick permanently in your brain
+
+🧠 OS RAPID REVISION (SUPER SUMMARY)
+
+Instead of theory, I’ll give you mental models you’ll never forget
+
+🔹 Process vs Thread
+
+👉 Process = separate memory
+👉 Thread = shared memory
+
+🧠 Think:
+
+Process = separate apps
+Thread = tabs inside app
+🔹 Context Switching
+
+👉 Switching CPU between processes
+
+🧠 Think:
+
+Pause → Save → Load → Resume
+🔹 Deadlock
+
+👉 circular waiting
+
+🧠 Think:
+
+A waits B, B waits A → stuck forever
+🔹 Critical Section
+
+👉 only one allowed
+
+🧠 Think:
+
+One ATM → one user
+🔹 Mutex vs Semaphore
+
+👉 Mutex = 1
+👉 Semaphore = many
+
+🔹 Paging vs Segmentation
+
+👉 Paging = fixed
+👉 Segmentation = logical
+
+🔹 Virtual Memory
+
+👉 illusion of large memory
+
+🔹 Scheduling
+
+👉 OS decides who gets CPU
+
+⚙️ COA RAPID REVISION (SUPER SUMMARY)
+🔹 CPU Components
+
+👉 ALU + Control Unit + Registers
+
+🔹 Instruction Cycle
+
+👉 Fetch → Decode → Execute
+
+🔹 Cache
+
+👉 fast memory near CPU
+
+🔹 Pipelining
+
+👉 overlapping execution
+
+🔹 RISC vs CISC
+
+👉 RISC = simple fast
+👉 CISC = complex
+
+🔹 Performance
+
+👉 depends on:
+
+Instruction count
+CPI
+Clock speed
+🔹 Parallel Processing
+
+👉 multiple tasks at same time
+
+🎯 FINAL RAPID-FIRE INTERVIEW ROUND 🔥
+
+Answer quickly (this is exactly like interview)
+
+🧠 Q1
+
+Difference between process and thread?
+
+👉 Process = independent memory
+👉 Thread = shared memory
+
+🧠 Q2
+
+What causes deadlock?
+
+👉 4 conditions (MHNC)
+
+🧠 Q3
+
+What is context switching?
+
+👉 saving and loading process state
+
+🧠 Q4
+
+Why cache is used?
+
+👉 reduce memory access time
+
+🧠 Q5
+
+What is paging?
+
+👉 fixed-size memory management
+
+🧠 Q6
+
+What is CPI?
+
+👉 cycles per instruction
+
+🧠 Q7
+
+What is interrupt?
+
+👉 signal to CPU to handle event
+
+🧠 Q8
+
+Difference between throughput and latency?
+
+👉 Throughput = tasks/sec
+👉 Latency = time per task
+
+🧠 Q9
+
+What is mutex?
+
+👉 lock for critical section
+
+🧠 Q10
+
+What is virtual memory?
+
+👉 using disk as extension of RAM
+
+🧠 FINAL MEMORY MAP (VERY POWERFUL 🔥)
+
+If you remember this → you can answer 90% questions
+
+OS:
+Process → Thread → Scheduling → Sync → Memory → Deadlock
+
+COA:
+CPU → Instruction → Memory → Cache → Performance → Parallelism
+🎯 INTERVIEW STRATEGY (IMPORTANT)
+
+When answering:
+
+1️⃣ Start simple
+2️⃣ Give example
+3️⃣ Use keyword
+4️⃣ Keep it short
+
+Example Answer
+
+Q: What is deadlock?
+
+👉
+"A deadlock is a situation where processes are stuck waiting for each other due to circular dependency of resources."
+
+🚀 FINAL STAGE
+
+You are now:
+
+✅ Strong in OS
+✅ Strong in COA
+✅ Ready for interview questions

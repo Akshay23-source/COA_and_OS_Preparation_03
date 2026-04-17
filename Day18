@@ -1,0 +1,135 @@
+🎯 ROUND 1: OS QUESTIONS (INTERVIEW STYLE)
+🧠 Q1: What happens when you run a program?
+
+👉 Think first…
+
+✅ Answer (Perfect Interview Answer)
+
+When we run a program:
+
+1️⃣ OS creates a process
+2️⃣ Loads program from disk → RAM
+3️⃣ Assigns PID & PCB
+4️⃣ CPU starts execution
+
+👉 So program becomes an active process
+
+🧠 Q2: What is the difference between process and thread?
+
+👉 Think…
+
+✅ Answer
+
+A process is an independent execution unit with its own memory,
+while a thread is a lightweight unit inside a process that shares memory.
+
+🧠 Q3: What is deadlock and how to prevent it?
+✅ Answer
+
+Deadlock is a situation where processes wait for each other in a circular manner.
+
+It can be prevented by breaking one of the four conditions:
+
+Mutual exclusion
+Hold and wait
+No preemption
+Circular wait
+🧠 Q4: What is paging and why is it used?
+✅ Answer
+
+Paging is a memory management technique where processes are divided into fixed-size pages and mapped to frames in RAM.
+
+It is used to avoid external fragmentation and improve memory utilization.
+
+🎯 ROUND 2: COA QUESTIONS
+🧠 Q5: What are the main components of CPU?
+✅ Answer
+
+CPU consists of:
+
+ALU → performs calculations
+Control Unit → controls execution
+Registers → store temporary data
+🧠 Q6: What is pipelining?
+✅ Answer
+
+Pipelining is a technique where multiple instructions are executed simultaneously by overlapping stages like fetch, decode, and execute.
+
+It improves CPU performance.
+
+🧠 Q7: What is cache memory and why is it needed?
+✅ Answer
+
+Cache is a small, fast memory located near CPU.
+
+It stores frequently used data to reduce memory access time and improve performance.
+
+🧠 Q8: What is CPI?
+✅ Answer
+
+CPI (Cycles Per Instruction) is the average number of clock cycles required to execute one instruction.
+
+Lower CPI means better performance.
+
+🎯 ROUND 3: SCENARIO QUESTIONS (VERY IMPORTANT 🔥)
+🧠 Q9
+
+Two threads update same variable and result is incorrect. Why?
+
+✅ Answer
+
+This is due to race condition, caused by lack of synchronization in critical section.
+
+🧠 Q10
+
+System becomes very slow due to frequent page faults. What is it?
+
+✅ Answer
+
+This is thrashing, where system spends more time swapping pages than executing.
+
+🎯 ROUND 4: HR + LOGIC MIX
+🧠 Q11: Why should we hire you?
+
+👉 Use this structure:
+
+✅ Answer (Simple & Strong)
+
+"I have a strong understanding of core subjects like OS and COA, and I focus on understanding concepts rather than memorizing. I am also consistent in learning and problem-solving, which helps me adapt quickly."
+
+🧠 Q12: What is your strength?
+✅ Answer
+
+"My strength is my ability to break down complex concepts into simple understanding and learn them deeply."
+
+🧠 Q13: What is your weakness?
+✅ Answer
+
+"I sometimes spend extra time understanding concepts deeply, but I am improving my time management."
+
+🧠 FINAL INTERVIEW TIPS (VERY IMPORTANT)
+🔥 1. If you don’t know answer:
+
+👉 Say:
+
+"I am not completely sure, but I think..."
+
+🔥 2. Always structure answers:
+
+👉 Definition → Example → Keyword
+
+🔥 3. Use keywords (VERY IMPORTANT)
+Deadlock → circular wait
+Paging → fixed-size
+Cache → fast memory
+CPI → performance
+🧠 FINAL CHECK
+
+If you can answer:
+
+✔ What is process
+✔ What is deadlock
+✔ What is paging
+✔ What is cache
+
+👉 You can clear 90% interviews

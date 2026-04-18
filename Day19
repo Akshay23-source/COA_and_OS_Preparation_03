@@ -1,0 +1,220 @@
+🧠 Q1
+
+A process is:
+
+A) Program in disk
+B) Program in execution
+C) File
+D) Memory
+
+👉 Answer: B
+
+🧠 Q2
+
+Which causes deadlock?
+
+A) Single process
+B) Circular wait
+C) Large memory
+D) Fast CPU
+
+👉 Answer: B
+
+🧠 Q3
+
+Which solves critical section problem?
+
+A) Paging
+B) Scheduling
+C) Mutex
+D) Cache
+
+👉 Answer: C
+
+🧠 Q4
+
+Starvation occurs in:
+
+A) FCFS
+B) Round Robin
+C) Priority Scheduling
+D) FIFO
+
+👉 Answer: C
+
+🧠 Q5
+
+Context switching involves:
+
+A) Changing memory
+B) Saving and loading process state
+C) Deleting process
+D) Creating thread
+
+👉 Answer: B
+
+🎯 ROUND 2: COA MCQs
+🧠 Q6
+
+ALU is used for:
+
+A) Storage
+B) Control
+C) Calculation
+D) Input
+
+👉 Answer: C
+
+🧠 Q7
+
+Cache memory is:
+
+A) Slow
+B) Large
+C) Fast
+D) External
+
+👉 Answer: C
+
+🧠 Q8
+
+CPI means:
+
+A) CPU per instruction
+B) Cycles per instruction
+C) Clock per input
+D) Cache per instruction
+
+👉 Answer: B
+
+🧠 Q9
+
+Which improves performance?
+
+A) High CPI
+B) Low CPI
+C) Low clock speed
+D) High latency
+
+👉 Answer: B
+
+🧠 Q10
+
+Pipelining is used to:
+
+A) Reduce memory
+B) Increase speed
+C) Reduce CPU
+D) Increase disk
+
+👉 Answer: B
+
+🎯 ROUND 3: TRICKY QUESTIONS 🔥
+🧠 Q11
+
+Which is NOT a deadlock condition?
+
+A) Mutual exclusion
+B) Preemption
+C) Hold and wait
+D) Circular wait
+
+👉 Answer: B
+
+🧠 Q12
+
+Thread shares:
+
+A) Memory
+B) CPU
+C) Disk
+D) Cache
+
+👉 Answer: A
+
+🧠 Q13
+
+Virtual memory uses:
+
+A) Cache
+B) Disk
+C) Registers
+D) ALU
+
+👉 Answer: B
+
+🧠 Q14
+
+Interrupt is:
+
+A) CPU error
+B) External signal
+C) Memory issue
+D) Thread problem
+
+👉 Answer: B
+
+🧠 Q15
+
+Which is fastest?
+
+A) RAM
+B) Cache
+C) Register
+D) Disk
+
+👉 Answer: C
+
+🧠 FINAL REVISION (ONE GLANCE MEMORY 🔥)
+OS CORE
+Process → Thread → Scheduling → Sync → Deadlock → Memory
+COA CORE
+CPU → Instruction → Cache → Memory → Performance → Parallelism
+🎯 LAST DAY INTERVIEW STRATEGY (VERY IMPORTANT)
+🔥 1. Always Answer Like This:
+
+👉 Definition
+👉 Example
+👉 Keyword
+
+Example
+
+Q: What is cache?
+
+👉
+"Cache is a small, fast memory located near CPU that stores frequently used data to reduce access time."
+
+🔥 2. If Confused in MCQ
+
+Use elimination:
+
+Remove extreme options
+Remove unrelated terms
+🔥 3. Top 5 MUST-KNOW QUESTIONS
+
+You WILL get at least 2–3 from these:
+
+1️⃣ Process vs Thread
+2️⃣ Deadlock
+3️⃣ Paging
+4️⃣ Cache
+5️⃣ CPU components
+
+🧠 FINAL CONFIDENCE CHECK
+
+If you can explain:
+
+✔ Deadlock
+✔ Paging
+✔ Cache
+✔ Process
+
+👉 You are ready to clear placements
+
+🚀 FINAL STAGE COMPLETE
+
+You are now:
+
+🏆 PLACEMENT READY (TOP 5% LEVEL)
+🏆 INTERVIEW CONFIDENT
+🏆 CONCEPTUALLY STRONG

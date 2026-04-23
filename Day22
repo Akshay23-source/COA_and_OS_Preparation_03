@@ -1,0 +1,242 @@
+🧠 OS Concept 1: Monolithic Kernel vs Microkernel
+1️⃣ Simple Idea
+
+A kernel has many services:
+
+process management
+memory management
+device drivers
+file system
+
+Question is:
+
+👉 where should these run?
+
+🔹 Monolithic Kernel
+
+Everything runs inside kernel.
+
+All services inside kernel
+
+Fast ✔
+But large and harder to maintain.
+
+Examples:
+
+Linux
+UNIX
+🔹 Microkernel
+
+Keep only essentials in kernel:
+
+scheduling
+memory basics
+IPC
+
+Everything else outside.
+
+Safer ✔
+Modular ✔
+
+Examples:
+
+Minix
+🧠 Analogy
+
+Monolithic:
+
+Whole company in one building.
+
+Microkernel:
+
+Small HQ + departments outside.
+
+🎯 Placement Question
+
+Q: Which is faster?
+
+👉 Monolithic (less communication overhead)
+
+🧠 Memory Trick
+Monolithic = big fast
+Microkernel = small safe
+🧠 OS Concept 2: Busy Waiting vs Blocking
+Busy Waiting
+
+Process keeps checking:
+
+Is resource free?
+Is resource free?
+Is resource free?
+
+CPU wasted ❌
+
+Blocking
+
+Process sleeps until resource available.
+
+CPU free ✔
+
+🧠 Analogy
+
+Busy waiting:
+
+Standing outside washroom checking every second.
+
+Blocking:
+
+Sit down, wait till called.
+
+🔗 Connection
+
+Spinlocks often use busy waiting.
+
+🎯 Placement Trap
+
+Q: Why busy waiting is bad?
+
+👉 Wastes CPU cycles.
+
+🧠 Memory Trick
+Busy waiting = active wait
+Blocking = passive wait
+⚙️ COA Concept 3: Harvard vs Von Neumann Architecture
+Von Neumann
+
+One memory for:
+
+data
+instructions
+
+Single bus.
+
+(We saw bottleneck yesterday.)
+
+Harvard Architecture
+
+Separate memory for:
+
+instructions
+data
+
+Separate buses.
+
+🧠 Analogy
+
+Von Neumann:
+
+One road for cars and trucks.
+
+Harvard:
+
+Two separate roads.
+
+Why Harvard Faster?
+
+Instruction fetch and data access can happen together.
+
+Examples
+
+Many microcontrollers use Harvard-style ideas.
+
+🎯 Placement Question
+
+Q: Why Harvard avoids Von Neumann bottleneck?
+
+👉 Separate buses remove competition.
+
+🧠 Memory Trick
+Von Neumann = one path
+Harvard = two paths
+⚙️ COA Concept 4: Cache Write Policies
+
+🔥 Frequently asked
+
+When CPU writes data, what happens to cache and memory?
+
+Two major policies:
+
+1️⃣ Write Through
+
+Update:
+
+Cache
+Main memory immediately
+
+✔ Simple
+❌ Slower writes
+
+2️⃣ Write Back
+
+Update only cache first.
+
+Memory updated later.
+
+✔ Faster
+❌ More complex
+
+🧠 Analogy
+
+Write Through:
+
+Update notebook and final report immediately.
+
+Write Back:
+
+Update notebook first, final report later.
+
+🎯 Placement Question
+
+Q: Which is faster?
+
+👉 Write Back
+
+🧠 Memory Trick
+Through = write everywhere now
+Back = write memory later
+🎯 Mini MCQs
+
+Q1. Busy waiting wastes:
+
+A) Disk
+B) CPU
+C) Cache
+D) Registers
+
+✅ B
+
+Q2. Harvard architecture uses:
+
+A) One bus
+B) Two buses
+C) No memory
+D) No CPU
+
+✅ B
+
+Q3. Faster write policy:
+
+A) Write through
+B) Write back
+
+✅ B
+
+Q4. Microkernel is known for:
+
+A) Safety
+B) Bigger size
+C) Faster than monolithic always
+D) No IPC
+
+✅ A
+
+📌 Today’s Summary
+OS
+
+✔ Monolithic vs Microkernel
+✔ Busy Waiting vs Blocking
+
+COA
+
+✔ Harvard vs Von Neumann
+✔ Cache Write Policies

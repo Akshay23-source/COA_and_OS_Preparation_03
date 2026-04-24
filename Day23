@@ -1,0 +1,223 @@
+🧠 OS Concept 1: Deadlock Detection vs Recovery
+
+You learned prevention and avoidance earlier.
+Now:
+
+👉 What if deadlock already happened?
+
+🔹 Deadlock Detection
+
+System checks:
+
+“Is deadlock present?”
+
+Often uses resource-allocation graph ideas.
+
+Goal:
+
+👉 identify deadlock.
+
+🔹 Recovery
+
+Once detected:
+
+How do we fix it?
+
+Methods:
+
+Terminate process(es)
+Preempt resources
+Rollback (restore earlier state)
+🧠 Analogy
+
+Detection:
+
+Smoke alarm detects fire 🔥
+
+Recovery:
+
+Firefighting puts it out 🚒
+
+🎯 Interview Trap
+
+Q: Difference between avoidance and detection?
+
+👉 Avoidance prevents unsafe allocation.
+👉 Detection finds deadlock after it occurs.
+
+🧠 Memory Trick
+Detection = find problem
+Recovery = fix problem
+🧠 OS Concept 2: Paging vs Swapping
+
+Confusing question 🔥
+
+Paging
+
+Moves pages.
+
+Small units.
+
+Page in
+Page out
+Swapping
+
+Moves entire process between RAM and disk.
+
+Big unit.
+
+🧠 Analogy
+
+Paging:
+
+Move few book pages.
+
+Swapping:
+
+Move whole book.
+
+Key Difference
+Paging	Swapping
+Pages	Whole process
+Fine-grained	Coarse-grained
+🎯 Placement Question
+
+Q: Does virtual memory use paging or swapping?
+
+👉 Primarily paging.
+
+🧠 Memory Trick
+Paging = parts
+Swapping = whole
+⚙️ COA Concept 3: Temporal vs Spatial Locality
+
+Very frequently asked.
+
+Temporal Locality
+
+If data used recently,
+
+👉 likely used again soon.
+
+Example:
+
+for(i=0;i<10;i++)
+
+i reused repeatedly.
+
+Spatial Locality
+
+If one memory location used,
+
+👉 nearby locations likely used.
+
+Example:
+
+arr[0], arr[1], arr[2]
+🧠 Analogy
+
+Reading book:
+
+Temporal:
+
+Re-read same paragraph.
+
+Spatial:
+
+Read nearby paragraphs.
+
+🎯 Interview Question
+
+Q: Cache relies on what principle?
+
+👉 Locality of reference (temporal + spatial)
+
+🧠 Memory Trick
+Temporal = same again
+Spatial = nearby next
+⚙️ COA Concept 4: Cache Replacement Policies (LRU vs FIFO)
+FIFO
+
+Remove oldest.
+
+Simple.
+
+LRU
+
+Remove least recently used.
+
+Smarter.
+
+Example
+
+Cache:
+
+1 2 3
+
+Need add 4.
+
+FIFO:
+
+remove 1
+
+LRU:
+
+remove least recently used.
+
+🎯 Interview Trap
+
+Q: Why LRU better than FIFO?
+
+👉 It uses usage behavior, FIFO only age.
+
+🔗 Connection
+
+Same idea also used in page replacement.
+
+🧠 Memory Trick
+FIFO = oldest out
+LRU = coldest out
+🎯 Mini MCQs
+
+Q1. Swapping moves:
+
+A) one page
+B) whole process
+C) one register
+D) cache block
+
+✅ B
+
+Q2. Reusing same variable repeatedly shows:
+
+A) spatial locality
+B) temporal locality
+
+✅ B
+
+Q3. Better replacement policy generally:
+
+A) FIFO
+B) LRU
+
+✅ B
+
+Q4. Deadlock recovery may involve:
+
+A) process termination
+B) ALU
+C) cache write-back
+D) pipelining
+
+✅ A
+
+📌 Today’s Summary
+OS
+
+✔ Deadlock Detection vs Recovery
+✔ Paging vs Swapping
+
+COA
+
+✔ Temporal vs Spatial Locality
+✔ LRU vs FIFO

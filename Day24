@@ -1,0 +1,201 @@
+🧠 OS Concept 1: User Threads vs Kernel Threads (Deep Trap)
+
+We saw basics earlier; now interview nuance.
+
+Core Difference
+User Threads
+
+Managed by user library.
+
+OS may not even know each thread.
+
+Kernel Threads
+
+Managed directly by OS.
+
+OS schedules them.
+
+🔥 Trap Question
+
+Q: Why can one blocked user thread block all user threads?
+
+Because kernel sees one process only.
+
+If process blocks:
+
+👉 all user threads block.
+
+🧠 Analogy
+
+User threads:
+
+Friends coordinating internally.
+
+Kernel sees whole group as one.
+
+🎯 Placement Question
+
+Which supports true parallelism?
+
+👉 Kernel threads.
+
+🧠 Memory Trick
+User threads = hidden from OS
+Kernel threads = visible to OS
+🧠 OS Concept 2: Reentrant Code
+
+🔥 Product companies may ask.
+
+1️⃣ Simple Idea
+
+Reentrant code can be safely used by multiple threads at same time.
+
+Why Safe?
+
+Because it doesn’t rely on shared mutable data.
+
+Example Idea
+
+Uses:
+
+✔ local variables
+
+Avoids:
+
+❌ global shared state
+
+🧠 Analogy
+
+Shared pen (unsafe)
+
+vs
+
+Everyone has own pen (safe)
+
+🔗 Connection
+
+Important in:
+
+signal handlers
+thread-safe libraries
+🎯 Placement Question
+
+Q: What makes code reentrant?
+
+👉 No unsafe shared state.
+
+🧠 Memory Trick
+Reentrant = safe re-entry
+⚙️ COA Concept 3: Write Allocate vs No Write Allocate
+
+Another cache trap.
+
+Write Miss happens:
+
+Data not in cache.
+
+What now?
+
+Write Allocate
+
+Bring block into cache first, then write.
+
+✔ good with write-back
+
+No Write Allocate
+
+Write directly to memory.
+
+Don’t load into cache.
+
+✔ sometimes better for one-time writes
+
+🎯 Trap Question
+
+Often paired with:
+
+Write Back ↔ Write Allocate
+Write Through ↔ No Write Allocate (common pairing)
+🧠 Memory Trick
+Allocate = bring to cache
+No allocate = skip cache
+⚙️ COA Concept 4: Direct Mapped vs Set Associative (Deep Dive)
+Direct Mapped
+
+Each memory block has exactly one cache place.
+
+Simple.
+
+Fast lookup.
+
+But conflicts possible.
+
+Set Associative
+
+Block maps to a set, then can go to multiple lines inside set.
+
+Less conflict.
+
+Used widely.
+
+🧠 Analogy
+
+Direct mapped:
+
+Student fixed one locker only.
+
+Set associative:
+
+Student can use any locker in assigned row.
+
+🎯 Placement Question
+
+Q: Why set associative preferred?
+
+👉 Reduces conflict misses.
+
+🧠 Memory Trick
+Direct = rigid
+Set = flexible
+🎯 Mini MCQs
+
+Q1. True parallelism supported by:
+
+A) User threads
+B) Kernel threads
+
+✅ B
+
+Q2. Reentrant code avoids:
+
+A) Local variables
+B) Shared unsafe globals
+
+✅ B
+
+Q3. Write allocate means:
+
+A) skip cache
+B) bring block into cache
+
+✅ B
+
+Q4. Set associative reduces:
+
+A) deadlock
+B) conflict misses
+C) interrupts
+D) CPI
+
+✅ B
+
+📌 Today’s Summary
+OS
+
+✔ User vs Kernel Threads (advanced)
+✔ Reentrant Code
+
+COA
+
+✔ Write Allocate vs No Write Allocate
+✔ Direct Mapped vs Set Associative

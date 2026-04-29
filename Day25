@@ -1,0 +1,206 @@
+🧠 OS Concept 1: Belady’s Anomaly
+
+Very famous trap question.
+
+1️⃣ Strange Idea
+
+Normally:
+
+More memory pages should reduce page faults.
+
+Right?
+
+Seems obvious.
+
+But sometimes…
+
+❌ More frames can increase page faults.
+
+That is:
+
+👉 Belady’s Anomaly
+
+Happens in:
+
+FIFO page replacement.
+
+(Not generally in LRU)
+
+🧠 Analogy
+
+Adding more shelves but becoming less organized.
+
+More space, worse performance.
+
+Strange but possible.
+
+🎯 Placement Trap
+
+Q: Which algorithm shows Belady’s anomaly?
+
+👉 FIFO
+
+🧠 Memory Trick
+Belady = more memory, more faults (weird!)
+🧠 OS Concept 2: Demand Paging
+1️⃣ Simple Idea
+
+Load page only when needed.
+
+Not before.
+
+Instead of loading whole process:
+Load only required pages
+Why Good?
+
+✔ Saves memory
+✔ Faster startup
+
+Page Fault
+
+If page absent:
+
+👉 page fault occurs
+OS loads it from disk.
+
+🔗 Connection
+
+Virtual memory heavily uses:
+
+👉 demand paging
+
+🎯 Placement Question
+
+Q: What triggers demand paging?
+
+👉 Page fault.
+
+🧠 Memory Trick
+Demand paging = load on demand
+⚙️ COA Concept 3: Cache Miss Types
+
+🔥 Very common.
+
+1️⃣ Compulsory Miss
+
+First time access.
+
+Can’t avoid.
+
+Example
+
+First ever access to block.
+
+Miss unavoidable.
+
+2️⃣ Conflict Miss
+
+Because blocks compete for same cache location.
+
+Common in direct mapped cache.
+
+3️⃣ Capacity Miss
+
+Cache too small.
+
+Needed data evicted.
+
+🧠 Memory Trick
+Compulsory = first time
+Conflict = mapping clash
+Capacity = cache too small
+🎯 Placement Question
+
+Q: Which miss reduced by set associative cache?
+
+👉 Conflict miss.
+
+⚙️ COA Concept 4: Superscalar vs Superpipeline
+
+Classic confusion question.
+
+Superscalar
+
+Multiple instructions per cycle.
+
+2+ instructions in same cycle
+Superpipeline
+
+Break pipeline into more smaller stages.
+
+Increase overlap.
+
+Analogy
+
+Superscalar:
+
+More workers.
+
+Superpipeline:
+
+More assembly stations.
+
+Difference
+Superscalar	Superpipeline
+more instructions/cycle	deeper pipeline
+multiple units	more stages
+🎯 Placement Trap
+
+Q: Difference?
+
+👉 Superscalar increases width.
+👉 Superpipeline increases depth.
+
+🧠 Memory Trick
+Scalar = wider
+Pipeline = deeper
+🎯 Mini MCQs
+
+Q1. Belady anomaly seen in:
+
+A) FIFO
+B) LRU
+
+✅ A
+
+Q2. Demand paging triggered by:
+
+A) Interrupt
+B) Page fault
+
+✅ B
+
+Q3. First access miss is:
+
+A) Conflict
+B) Capacity
+C) Compulsory
+
+✅ C
+
+Q4. Superscalar improves:
+
+A) width
+B) depth
+
+✅ A
+
+📌 Today’s Summary
+OS
+
+✔ Belady’s Anomaly
+✔ Demand Paging
+
+COA
+
+✔ Cache Miss Types
+✔ Superscalar vs Superpipeline
+
+🚀 Day 26 Preview
+
+Next:
+
+Copy-on-Write (very important)
+IPC (Pipes, Message Queues, Shared Memory)
+Branch Prediction
+Write Buffer

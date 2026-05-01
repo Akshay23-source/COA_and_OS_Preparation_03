@@ -1,0 +1,137 @@
+🎯 ROUND 1: TCS / Infosys THEORY QUESTIONS
+🧠 Q1: What is the difference between multiprogramming and multitasking?
+
+👉 Think first…
+
+✅ Answer (Perfect)
+
+Multiprogramming means multiple programs are kept in memory to maximize CPU usage,
+while multitasking allows multiple tasks to run seemingly simultaneously using context switching.
+
+🧠 Q2: What is thrashing and how to solve it?
+✅ Answer
+
+Thrashing is a condition where the system spends more time swapping pages than executing.
+
+Solution:
+
+increase RAM
+reduce number of processes
+improve page replacement
+🧠 Q3: What is virtual memory?
+✅ Answer
+
+Virtual memory is a technique that allows execution of large programs by using disk as an extension of RAM.
+
+🎯 ROUND 2: ACCENTURE / WIPRO MCQs
+🧠 Q4
+
+Which scheduling gives fairness?
+
+A) FCFS
+B) SJF
+C) Round Robin
+D) Priority
+
+👉 Answer: C
+
+🧠 Q5
+
+Which memory is fastest?
+
+A) Cache
+B) RAM
+C) Register
+D) Disk
+
+👉 Answer: C
+
+🧠 Q6
+
+Page fault occurs when:
+
+A) page found
+B) page not in memory
+C) CPU error
+D) cache hit
+
+👉 Answer: B
+
+🎯 ROUND 3: PRODUCT COMPANY STYLE QUESTIONS 🔥
+🧠 Q7: Why threads are preferred over processes?
+✅ Answer (Impressive)
+
+Threads are preferred because they are lightweight, share memory, have faster context switching, and allow efficient communication.
+
+🧠 Q8: Why cache improves performance?
+✅ Answer
+
+Cache reduces memory access time by storing frequently used data close to CPU, based on locality of reference.
+
+🧠 Q9: Why deadlock is difficult to handle?
+✅ Answer
+
+Because it involves multiple processes waiting cyclically, making it complex to detect and recover without affecting system stability.
+
+🎯 ROUND 4: SCENARIO QUESTIONS (VERY IMPORTANT)
+🧠 Q10
+
+System slows down due to excessive page faults. What is it?
+
+👉 Answer: Thrashing
+
+🧠 Q11
+
+Two threads updating same variable gives wrong output. Why?
+
+👉 Answer: Race condition
+
+🧠 Q12
+
+CPU waiting for I/O continuously is inefficient. Solution?
+
+👉 Answer: Interrupt-driven I/O or DMA
+
+🎯 FINAL RAPID FIRE (ANSWER FAST)
+🧠 Q13
+
+Deadlock needs how many conditions?
+
+👉 4
+
+🧠 Q14
+
+Which cache policy is faster?
+
+👉 Write back
+
+🧠 Q15
+
+Which is better: LRU or FIFO?
+
+👉 LRU
+
+🧠 FINAL INTERVIEW STRATEGY (IMPORTANT)
+🔥 1. Always include keywords
+Deadlock → circular wait
+Paging → fixed-size
+Cache → locality
+🔥 2. Keep answers short + clear
+
+Avoid long explanations.
+
+🔥 3. Use examples (small ones)
+🔥 4. Stay calm if stuck
+
+Say:
+
+👉 “Based on my understanding…”
+
+🏆 FINAL STATUS
+
+You are now:
+
+✅ Strong in OS
+✅ Strong in COA
+✅ Ready for MCQs
+✅ Ready for interviews

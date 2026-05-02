@@ -1,0 +1,124 @@
+🎯 ROUND 1: INTRO (HR + TECH MIX)
+🧠 Q1: Tell me about yourself
+
+👉 Ideal Structure
+
+Who you are
+Your branch
+Your skills
+Your strength
+✅ Sample Answer
+
+"I am a 3rd year Computer Science student with strong fundamentals in Operating Systems and Computer Architecture. I focus on understanding concepts deeply rather than memorizing, and I enjoy solving problems and learning system-level concepts."
+
+🎯 ROUND 2: CORE OS QUESTIONS
+🧠 Q2: What is a process?
+
+👉 Your answer?
+
+✅ Answer
+
+A process is a program in execution that has its own memory, state, and resources managed by the OS.
+
+🧠 Q3: What is the difference between process and thread?
+✅ Answer
+
+A process is independent with its own memory, while a thread is a lightweight unit within a process that shares memory.
+
+🧠 Q4: What is deadlock?
+✅ Answer
+
+Deadlock is a situation where processes wait for each other in a circular manner and cannot proceed.
+
+🧠 Q5: What is paging?
+✅ Answer
+
+Paging is a memory management technique that divides processes into fixed-size pages and maps them to frames in RAM.
+
+🎯 ROUND 3: COA QUESTIONS
+🧠 Q6: What are CPU components?
+✅ Answer
+
+CPU consists of ALU, Control Unit, and Registers.
+
+🧠 Q7: What is pipelining?
+✅ Answer
+
+Pipelining is a technique where multiple instructions are executed simultaneously by overlapping stages.
+
+🧠 Q8: What is cache memory?
+✅ Answer
+
+Cache is a small, fast memory that stores frequently used data to reduce access time.
+
+🎯 ROUND 4: SCENARIO QUESTIONS
+🧠 Q9
+
+Two threads update same variable → wrong result?
+
+✅ Answer
+
+Race condition due to lack of synchronization.
+
+🧠 Q10
+
+System is slow due to excessive paging?
+
+✅ Answer
+
+Thrashing.
+
+🧠 Q11
+
+CPU waiting for I/O?
+
+✅ Answer
+
+Use interrupt-driven I/O or DMA.
+
+🎯 ROUND 5: TRICK QUESTIONS 🔥
+🧠 Q12: Which is faster: cache or RAM?
+
+👉 Cache
+
+🧠 Q13: Why LRU better than FIFO?
+
+👉 Uses usage pattern, reduces faults
+
+🧠 Q14: What is CPI?
+
+👉 Cycles per instruction
+
+🎯 ROUND 6: HR QUESTIONS
+🧠 Q15: Why should we hire you?
+✅ Answer
+
+"I have strong fundamentals in core subjects like OS and COA, and I focus on understanding concepts deeply. I am consistent, quick to learn, and can adapt to new challenges."
+
+🧠 Q16: Your strength?
+
+👉 Concept clarity
+
+🧠 Q17: Your weakness?
+
+👉 Overthinking → improving time management
+
+🧠 FINAL FEEDBACK (IMPORTANT)
+
+If you can answer:
+
+✔ Process
+✔ Deadlock
+✔ Paging
+✔ Cache
+
+👉 You will clear most interviews.
+
+🏆 FINAL STATUS
+
+You are now:
+
+🔥 Conceptually strong
+🔥 Interview-ready
+🔥 Above majority of students
+

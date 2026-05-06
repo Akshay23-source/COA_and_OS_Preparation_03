@@ -1,0 +1,211 @@
+🧠 OS Concept 1: System Call Flow (Deep Understanding)
+
+You already know system calls.
+
+Now let’s see:
+
+👉 what actually happens internally.
+
+1️⃣ Flow of System Call
+
+Example:
+
+read(file)
+Step-by-Step
+1️⃣ User Mode
+
+Program runs normally.
+
+2️⃣ System Call Invoked
+
+Trap instruction executed.
+
+CPU switches:
+
+User Mode → Kernel Mode
+3️⃣ Kernel Executes
+
+OS accesses:
+
+file system
+disk
+memory
+4️⃣ Return to User Mode
+
+Data returned to program.
+
+🧠 Real-World Analogy
+
+Student asks office for document.
+
+Student → User mode
+Office → Kernel mode
+Request → System call
+🎯 Placement Question
+
+Q: Why system calls need mode switch?
+
+👉 User programs cannot directly access hardware.
+
+🧠 Memory Trick
+System call = controlled kernel access
+🧠 OS Concept 2: IPC Deep Comparison
+
+Earlier you learned IPC basics.
+
+Now compare deeply.
+
+🔹 Pipe
+
+✔ Simple
+✔ Related processes
+
+❌ One-directional usually
+
+🔹 Message Queue
+
+✔ Structured communication
+✔ Processes independent
+
+❌ Slower than shared memory
+
+🔹 Shared Memory
+
+✔ Fastest
+✔ Direct access
+
+❌ Synchronization needed
+
+🧠 Interview Trap
+
+Q: Why shared memory fastest?
+
+👉 No kernel copying during communication.
+
+🔗 Connection
+
+Shared memory often combined with:
+
+👉 semaphores/mutex
+
+🧠 Memory Trick
+Shared memory = fastest but risky
+⚙️ COA Concept 3: Branch Hazard vs Data Hazard
+
+Very common confusion.
+
+🔹 Data Hazard
+
+Instruction depends on previous result.
+
+Example:
+
+I1: A = B + C
+I2: D = A + E
+
+I2 waits.
+
+🔹 Branch Hazard
+
+CPU unsure next instruction after branch.
+
+Example:
+
+if(x > 0)
+🧠 Analogy
+
+Data hazard:
+
+Waiting for ingredient.
+
+Branch hazard:
+
+Waiting for decision.
+
+🎯 Placement Question
+
+Q: Which hazard solved using branch prediction?
+
+👉 Branch hazard.
+
+🧠 Memory Trick
+Data = dependency
+Branch = uncertainty
+⚙️ COA Concept 4: Memory-Mapped I/O vs Isolated I/O
+🔹 Memory-Mapped I/O
+
+Devices treated like memory addresses.
+
+Same instructions used.
+
+Example
+Device address = memory location
+🔹 Isolated I/O
+
+Separate instructions for devices.
+
+Separate address space.
+
+🧠 Real-World Analogy
+
+Memory-mapped:
+
+Same road for all traffic.
+
+Isolated:
+
+Separate VIP road.
+
+🎯 Placement Question
+
+Q: Advantage of memory-mapped I/O?
+
+👉 Simpler programming using normal memory instructions.
+
+🧠 Memory Trick
+Mapped = treated like memory
+Isolated = separate space
+🎯 Mini MCQs
+
+Q1. System call switches CPU to:
+
+A) Cache
+B) Kernel mode
+C) User thread
+D) DMA
+
+✅ B
+
+Q2. Fastest IPC:
+
+A) Pipe
+B) Queue
+C) Shared memory
+
+✅ C
+
+Q3. Branch prediction solves:
+
+A) Data hazard
+B) Branch hazard
+
+✅ B
+
+Q4. Memory-mapped I/O treats device as:
+
+A) CPU
+B) Register
+C) Memory
+
+✅ C
+
+📌 Today’s Summary
+OS
+
+✔ System Call Flow
+✔ IPC Deep Comparison
+
+COA
+
+✔ Branch Hazard vs Data Hazard
+✔ Memory-Mapped vs Isolated I/O

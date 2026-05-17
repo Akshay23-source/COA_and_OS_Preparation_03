@@ -1,0 +1,361 @@
+
+
+---
+
+# 🧠 OS Concept 1: Microservices Architecture
+
+## 1️⃣ Simple Idea
+
+Instead of one huge application:
+
+👉 split system into small independent services.
+
+Each service handles one responsibility.
+
+---
+
+## 🧠 Real-World Analogy
+
+Restaurant 🍽️
+
+Instead of one person doing everything:
+
+* one cooks
+* one handles billing
+* one delivers
+
+Independent teams.
+
+---
+
+## ⚙️ Example
+
+For your Women Safety App:
+
+```text id="w8m3kp"
+Auth Service
+SOS Service
+Location Service
+Notification Service
+```
+
+Each can scale independently.
+
+---
+
+## Advantages
+
+✔ scalability
+✔ easier maintenance
+✔ fault isolation
+
+---
+
+## Disadvantages
+
+❌ more complexity
+❌ network communication overhead
+
+---
+
+## 🎯 Placement Question
+
+**Q: Why microservices are scalable?**
+
+👉 Because individual services can scale independently.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="t4n8vz"
+Microservices = many small focused services
+```
+
+---
+
+# 🧠 OS Concept 2: API Gateway
+
+🔥 Very common backend interview topic.
+
+---
+
+## 1️⃣ Problem
+
+With many microservices:
+
+Clients should not directly contact every service.
+
+---
+
+## Solution
+
+👉 API Gateway
+
+---
+
+## Role of API Gateway
+
+✔ single entry point
+✔ routing
+✔ authentication
+✔ rate limiting
+
+---
+
+## 🧠 Real-World Analogy
+
+Reception desk in company 🏢
+
+Visitors go through reception first.
+
+---
+
+## ⚙️ Flow
+
+```text id="u7r2mn"
+Client
+  ↓
+API Gateway
+  ↓
+Microservices
+```
+
+---
+
+## 🎯 Placement Question
+
+**Q: Why API gateways are useful?**
+
+👉 They simplify client communication and centralize request handling.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="q5z1lx"
+Gateway = traffic controller
+```
+
+---
+
+# ⚙️ COA Concept 3: TPU vs GPU
+
+🔥 AI interview favorite.
+
+---
+
+# 🔹 GPU
+
+General-purpose parallel processor.
+
+Good for:
+
+* graphics
+* AI
+* simulations
+
+---
+
+# 🔹 TPU (Tensor Processing Unit)
+
+Specialized hardware for AI workloads.
+
+Optimized for:
+
+👉 tensor/matrix operations.
+
+---
+
+## 🧠 Real-World Analogy
+
+GPU:
+
+Multi-purpose factory.
+
+TPU:
+
+Factory specialized only for AI math.
+
+---
+
+## Why TPUs Faster for AI?
+
+Because they are designed specifically for:
+
+* neural networks
+* matrix multiplication
+* deep learning
+
+---
+
+## 🎯 Placement Question
+
+**Q: Why TPU better for deep learning?**
+
+👉 Because TPU hardware is optimized specifically for tensor computations.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="3n0zkw"
+GPU = general parallel
+TPU = AI-specialized
+```
+
+---
+
+# ⚙️ COA Concept 4: Memory Bottlenecks in AI Systems
+
+---
+
+## 1️⃣ Problem
+
+AI models process huge amounts of data.
+
+Sometimes:
+
+👉 memory transfer becomes slower than computation.
+
+---
+
+## Example
+
+GPU ready to compute,
+
+but waiting for data from memory.
+
+---
+
+## Why Important?
+
+System speed limited by:
+
+❌ memory bandwidth
+❌ latency
+
+not always CPU/GPU speed.
+
+---
+
+## Solutions
+
+✔ caching
+✔ high-bandwidth memory
+✔ data locality optimization
+✔ parallel memory access
+
+---
+
+## 🔗 Connection
+
+Similar to:
+
+👉 Von Neumann bottleneck
+
+---
+
+## 🎯 Placement Question
+
+**Q: Why memory can bottleneck AI systems?**
+
+👉 Because AI workloads require huge data movement, which memory systems may not supply fast enough.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="m9x4cb"
+Fast compute + slow memory = bottleneck
+```
+
+---
+
+# 🎯 PROJECT INTERVIEW TRAINING
+
+---
+
+# 🧠 Q1: Why microservices instead of monolithic architecture?
+
+### ✅ Strong Answer
+
+“Microservices improve scalability, maintainability, and fault isolation by separating functionalities into independent services.”
+
+---
+
+# 🧠 Q2: Why API gateway needed?
+
+### ✅ Strong Answer
+
+“It provides centralized routing, authentication, and request management for multiple backend services.”
+
+---
+
+# 🧠 Q3: What could bottleneck an AI system?
+
+### ✅ Strong Answer
+
+“Memory bandwidth and data transfer latency often become bottlenecks because AI workloads process massive datasets.”
+
+---
+
+# 🎯 Mini MCQs
+
+Q1. Microservices improve:
+
+A) cache size
+B) scalability
+C) paging
+D) registers
+
+✅ B
+
+---
+
+Q2. API gateway acts as:
+
+A) database
+B) single entry point
+C) cache line
+D) scheduler
+
+✅ B
+
+---
+
+Q3. TPU optimized for:
+
+A) disk operations
+B) tensor computations
+C) paging
+D) IPC
+
+✅ B
+
+---
+
+Q4. AI systems often bottleneck at:
+
+A) memory
+B) keyboard
+C) shell
+D) segmentation
+
+✅ A
+
+---
+
+# 📌 Today’s Summary
+
+### OS
+
+✔ Microservices Architecture
+✔ API Gateway
+
+### COA
+
+✔ TPU vs GPU
+✔ Memory Bottlenecks in AI
+
+

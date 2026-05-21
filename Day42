@@ -1,0 +1,345 @@
+
+
+---
+
+# 🧠 OS Concept 1: Distributed Transactions Basics
+
+## 1️⃣ Simple Idea
+
+A transaction may involve:
+
+👉 multiple databases/services across machines.
+
+All must succeed together.
+
+---
+
+## 🧠 Real-World Analogy
+
+Online shopping 🛒
+
+Need all together:
+
+* payment success
+* inventory update
+* order creation
+
+If one fails:
+
+👉 rollback everything.
+
+---
+
+## Problem
+
+In distributed systems:
+
+❌ network failures
+❌ machine crashes
+❌ delays
+
+make transactions difficult.
+
+---
+
+## Common Solution
+
+### Two-Phase Commit (2PC)
+
+---
+
+## Phase 1
+
+Coordinator asks:
+
+```text id="n7x3vk"
+"Can you commit?"
+```
+
+---
+
+## Phase 2
+
+If all agree:
+
+✔ commit
+
+Else:
+
+❌ rollback
+
+---
+
+## 🎯 Placement Question
+
+**Q: Why distributed transactions are difficult?**
+
+👉 Because failures and network issues can occur across multiple systems.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="2k9qwb"
+All systems commit together or rollback
+```
+
+---
+
+# 🧠 OS Concept 2: Eventual Consistency
+
+🔥 Extremely important cloud concept.
+
+---
+
+## 1️⃣ Simple Idea
+
+All nodes may not immediately show same data,
+
+BUT eventually they become consistent.
+
+---
+
+## 🧠 Real-World Analogy
+
+WhatsApp messages syncing across devices.
+
+One device updates first, others later.
+
+---
+
+## Why Used?
+
+Strong consistency can reduce availability and performance.
+
+Eventual consistency improves:
+
+✔ scalability
+✔ availability
+
+---
+
+## Used In
+
+* social media
+* distributed caches
+* NoSQL databases
+
+---
+
+## 🎯 Placement Question
+
+**Q: What is eventual consistency?**
+
+👉 Data may temporarily differ across nodes but eventually becomes consistent.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="8v2tpk"
+Not immediate, but eventually same
+```
+
+---
+
+# ⚙️ COA Concept 3: Tensor Cores
+
+🔥 Modern AI hardware concept.
+
+---
+
+## 1️⃣ Simple Idea
+
+Tensor cores are specialized hardware units for AI matrix operations.
+
+---
+
+## Why Important?
+
+Deep learning heavily uses:
+
+👉 matrix multiplication
+
+Tensor cores accelerate it massively.
+
+---
+
+## 🧠 Real-World Analogy
+
+Specialized factory machine built only for one task.
+
+---
+
+## Used In
+
+* NVIDIA AI GPUs
+* deep learning training
+
+Examples:
+
+* NVIDIA AI GPUs
+
+---
+
+## 🎯 Placement Question
+
+**Q: Why tensor cores improve AI performance?**
+
+👉 Because they accelerate matrix and tensor computations used in deep learning.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="0r4myn"
+Tensor cores = AI math accelerators
+```
+
+---
+
+# ⚙️ COA Concept 4: AI Training Bottlenecks
+
+---
+
+## 1️⃣ AI Training Needs
+
+✔ huge computation
+✔ massive memory
+✔ large datasets
+
+---
+
+## Common Bottlenecks
+
+---
+
+## 🔹 Memory Bandwidth
+
+GPU waiting for data.
+
+---
+
+## 🔹 Communication Overhead
+
+Multiple GPUs exchanging parameters.
+
+---
+
+## 🔹 Storage Throughput
+
+Data loading too slow.
+
+---
+
+## 🔹 Synchronization Cost
+
+Devices waiting for each other.
+
+---
+
+## 🧠 Real-World Analogy
+
+Fast workers slowed by slow material delivery.
+
+---
+
+## 🎯 Placement Question
+
+**Q: What commonly bottlenecks AI training?**
+
+👉 Memory bandwidth and inter-device communication.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="6j8qvx"
+AI training bottleneck = moving data
+```
+
+---
+
+# 🎯 PROJECT INTERVIEW TRAINING
+
+---
+
+# 🧠 Q1: Why eventual consistency useful in large systems?
+
+### ✅ Strong Answer
+
+“It improves scalability and availability by allowing temporary inconsistency during synchronization.”
+
+---
+
+# 🧠 Q2: Why distributed transactions are challenging?
+
+### ✅ Strong Answer
+
+“Because failures and communication delays can occur across multiple distributed services.”
+
+---
+
+# 🧠 Q3: Why specialized AI hardware needed?
+
+### ✅ Strong Answer
+
+“AI workloads involve extremely large matrix operations that general-purpose CPUs cannot execute efficiently enough.”
+
+---
+
+# 🎯 Mini MCQs
+
+Q1. 2PC stands for:
+
+A) Two-Page Commit
+B) Two-Phase Commit
+C) Two-Process Cache
+D) Tensor Commit
+
+✅ B
+
+---
+
+Q2. Eventual consistency means:
+
+A) immediate consistency
+B) consistency achieved later
+
+✅ B
+
+---
+
+Q3. Tensor cores accelerate:
+
+A) paging
+B) matrix operations
+C) interrupts
+D) IPC
+
+✅ B
+
+---
+
+Q4. AI training bottleneck often caused by:
+
+A) keyboard input
+B) memory bandwidth
+
+✅ B
+
+---
+
+# 📌 Today’s Summary
+
+### OS
+
+✔ Distributed Transactions
+✔ Eventual Consistency
+
+### COA
+
+✔ Tensor Cores
+✔ AI Training Bottlenecks
+
+

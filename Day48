@@ -1,0 +1,369 @@
+
+
+🔥 **SCALABLE API + RECONFIGURABLE HARDWARE ROUND**
+Today = concepts used in:
+
+* API protection systems
+* fault-tolerant distributed services
+* custom AI hardware
+* large GPU clusters
+
+These are highly valuable in backend + systems interviews.
+
+---
+
+# 🧠 OS Concept 1: Rate Limiting
+
+🔥 Very important API/backend topic.
+
+---
+
+## 1️⃣ Simple Idea
+
+Limit how many requests a user/system can send in given time.
+
+---
+
+## Example
+
+```text id="7m2qpk"
+100 requests/minute
+```
+
+If exceeded:
+
+❌ requests blocked or delayed.
+
+---
+
+## Why Needed?
+
+✔ prevent abuse
+✔ avoid overload
+✔ improve stability
+✔ protect APIs
+
+---
+
+## 🧠 Real-World Analogy
+
+Water tap allowing limited flow.
+
+---
+
+## Common Techniques
+
+* Token bucket
+* Leaky bucket
+
+(Only basics needed for placements.)
+
+---
+
+## 🎯 Placement Question
+
+**Q: Why rate limiting important?**
+
+👉 Because it prevents overload and protects services from excessive traffic.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="4x8mtr"
+Too many requests → slow/block them
+```
+
+---
+
+# 🧠 OS Concept 2: Distributed Retries & Idempotency
+
+🔥 Important reliability concept.
+
+---
+
+# 🔹 Retries
+
+If request fails temporarily:
+
+👉 retry automatically.
+
+---
+
+## Problem
+
+Retrying can accidentally duplicate operations.
+
+Example:
+
+```text id="2n7qvw"
+Payment processed twice
+```
+
+Dangerous ❌
+
+---
+
+# 🔹 Idempotency
+
+Same request repeated multiple times:
+
+👉 result remains same.
+
+---
+
+## Example
+
+Setting:
+
+```text id="9k3xzp"
+status = completed
+```
+
+multiple times is safe.
+
+---
+
+## 🧠 Real-World Analogy
+
+Pressing elevator button repeatedly doesn’t create multiple elevators.
+
+---
+
+## Why Important?
+
+Critical for:
+
+✔ payment systems
+✔ distributed APIs
+✔ retries
+
+---
+
+## 🎯 Placement Question
+
+**Q: Why idempotency important in distributed systems?**
+
+👉 Because retries may occur during failures, and duplicate actions must be avoided.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="6v1qmn"
+Repeat safely without side effects
+```
+
+---
+
+# ⚙️ COA Concept 3: Reconfigurable Computing (FPGAs)
+
+🔥 Advanced hardware interview topic.
+
+---
+
+## 1️⃣ Simple Idea
+
+FPGAs are chips whose hardware behavior can be reprogrammed after manufacturing.
+
+---
+
+## FPGA =
+
+Field-Programmable Gate Array
+
+---
+
+## Why Useful?
+
+Can customize hardware for:
+
+✔ AI
+✔ networking
+✔ signal processing
+✔ acceleration tasks
+
+---
+
+## 🧠 Real-World Analogy
+
+LEGO blocks rearranged into different machines.
+
+---
+
+## Difference from CPU
+
+CPU:
+
+General-purpose fixed architecture.
+
+FPGA:
+
+Customizable hardware logic.
+
+---
+
+## 🎯 Placement Question
+
+**Q: Why FPGAs are powerful?**
+
+👉 Because hardware can be customized for specific workloads.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="5p9xrk"
+FPGA = programmable hardware
+```
+
+---
+
+# ⚙️ COA Concept 4: AI Accelerator Interconnects
+
+🔥 Modern AI infrastructure topic.
+
+---
+
+## 1️⃣ Problem
+
+Large AI training uses many GPUs/TPUs.
+
+They must communicate quickly.
+
+---
+
+## Interconnects
+
+Special high-speed communication links.
+
+Examples:
+
+* NVLink
+* InfiniBand
+
+---
+
+## Why Important?
+
+Slow communication causes:
+
+❌ training bottlenecks
+❌ synchronization delays
+
+---
+
+## 🧠 Real-World Analogy
+
+Fast highways between factories.
+
+---
+
+## 🔗 Connection
+
+Critical for:
+
+* distributed AI training
+* model parallelism
+
+---
+
+## 🎯 Placement Question
+
+**Q: Why fast interconnects important in AI systems?**
+
+👉 Because GPUs exchange huge amounts of training data and parameters.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="3r8mqt"
+Many GPUs need fast communication
+```
+
+---
+
+# 🎯 PROJECT INTERVIEW TRAINING
+
+---
+
+# 🧠 Q1: How would you protect your backend APIs?
+
+### ✅ Strong Answer
+
+“We would use authentication, rate limiting, and monitoring to prevent abuse and overload.”
+
+---
+
+# 🧠 Q2: Why retries dangerous without idempotency?
+
+### ✅ Strong Answer
+
+“Retries can accidentally duplicate operations like payments or database updates.”
+
+---
+
+# 🧠 Q3: Why specialized interconnects needed in AI clusters?
+
+### ✅ Strong Answer
+
+“Distributed AI training requires massive high-speed communication between accelerators.”
+
+---
+
+# 🎯 Mini MCQs
+
+Q1. Rate limiting mainly prevents:
+
+A) cache hits
+B) overload
+C) paging
+D) interrupts
+
+✅ B
+
+---
+
+Q2. Idempotency ensures:
+
+A) retries are unsafe
+B) repeated requests stay safe
+
+✅ B
+
+---
+
+Q3. FPGA stands for:
+
+A) Fast Parallel GPU Architecture
+B) Field-Programmable Gate Array
+
+✅ B
+
+---
+
+Q4. AI interconnects help:
+
+A) GPU communication
+B) disk scheduling
+C) segmentation
+D) paging
+
+✅ A
+
+---
+
+# 📌 Today’s Summary
+
+### OS
+
+✔ Rate Limiting
+✔ Retries & Idempotency
+
+### COA
+
+✔ FPGAs
+✔ AI Accelerator Interconnects
+
+

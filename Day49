@@ -1,0 +1,372 @@
+
+
+---
+
+# 🧠 OS Concept 1: API Versioning
+
+🔥 Important backend engineering topic.
+
+---
+
+## 1️⃣ Problem
+
+Applications evolve over time.
+
+New API changes may break old clients.
+
+---
+
+## Solution
+
+Use API versions.
+
+---
+
+## Example
+
+```text id="7m3xqp"
+/api/v1/users
+/api/v2/users
+```
+
+Old clients continue working.
+
+---
+
+## Why Important?
+
+✔ backward compatibility
+✔ smooth upgrades
+✔ easier maintenance
+
+---
+
+## 🧠 Real-World Analogy
+
+New textbook editions while old editions still usable.
+
+---
+
+## Common Strategies
+
+* URL versioning
+* header versioning
+
+---
+
+## 🎯 Placement Question
+
+**Q: Why API versioning important?**
+
+👉 Because applications evolve and older clients must remain compatible.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="4q8mtr"
+New API without breaking old users
+```
+
+---
+
+# 🧠 OS Concept 2: Distributed Leader Election
+
+🔥 Classic distributed systems concept.
+
+---
+
+## 1️⃣ Problem
+
+In distributed systems:
+
+Many nodes exist.
+
+Sometimes one node must coordinate others.
+
+---
+
+## Solution
+
+Elect one node as:
+
+👉 leader
+
+---
+
+## Leader Responsibilities
+
+✔ coordination
+✔ scheduling
+✔ decision making
+
+---
+
+## Problem
+
+Leader may fail.
+
+Need re-election.
+
+---
+
+## 🧠 Real-World Analogy
+
+Team selecting captain.
+
+If captain unavailable:
+
+👉 choose new one.
+
+---
+
+## Uses
+
+* distributed databases
+* consensus systems
+* Kubernetes-like orchestration
+
+Examples:
+
+* Kubernetes
+
+---
+
+## 🎯 Placement Question
+
+**Q: Why leader election needed?**
+
+👉 To coordinate distributed system operations efficiently.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="9v2xpk"
+One node coordinates others
+```
+
+---
+
+# ⚙️ COA Concept 3: Systolic Arrays
+
+🔥 Very important AI accelerator topic.
+
+---
+
+## 1️⃣ Simple Idea
+
+Data flows rhythmically through processing elements.
+
+Each unit performs small operation and passes result onward.
+
+---
+
+## Used For
+
+✔ matrix multiplication
+✔ neural networks
+✔ AI accelerators
+
+---
+
+## 🧠 Real-World Analogy
+
+Assembly line in factory.
+
+Each worker performs one small task.
+
+---
+
+## Why Powerful?
+
+✔ massive parallelism
+✔ efficient data reuse
+✔ lower memory movement
+
+---
+
+## Example
+
+Widely used in AI accelerators like TPUs.
+
+---
+
+## 🎯 Placement Question
+
+**Q: Why systolic arrays efficient for AI?**
+
+👉 Because they enable highly parallel matrix computations with efficient data movement.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="3n7qvw"
+Data pulses through processing units
+```
+
+---
+
+# ⚙️ COA Concept 4: AI Memory Hierarchies
+
+🔥 Critical AI infrastructure concept.
+
+---
+
+## 1️⃣ Problem
+
+AI workloads need huge data movement.
+
+Single memory type insufficient.
+
+---
+
+## Solution
+
+Use memory hierarchy.
+
+---
+
+## Levels
+
+```text id="6x1mqt"
+Registers
+↓
+Cache
+↓
+HBM
+↓
+RAM
+↓
+Storage
+```
+
+---
+
+## Goal
+
+Keep frequently used data:
+
+👉 closer to compute units.
+
+---
+
+## Why Important?
+
+✔ reduces latency
+✔ improves throughput
+✔ lowers bottlenecks
+
+---
+
+## 🔗 Connection
+
+Same idea as traditional cache hierarchy but optimized for AI workloads.
+
+---
+
+## 🎯 Placement Question
+
+**Q: Why memory hierarchy important in AI systems?**
+
+👉 Because moving data efficiently is critical for AI performance.
+
+---
+
+## 🧠 Memory Trick
+
+```text id="5k9xzr"
+Hot data stays near compute
+```
+
+---
+
+# 🎯 PROJECT INTERVIEW TRAINING
+
+---
+
+# 🧠 Q1: Why API versioning useful?
+
+### ✅ Strong Answer
+
+“It allows new features and improvements without breaking compatibility for older clients.”
+
+---
+
+# 🧠 Q2: Why distributed systems need leader election?
+
+### ✅ Strong Answer
+
+“A leader coordinates tasks and maintains system consistency efficiently.”
+
+---
+
+# 🧠 Q3: Why AI chips focus heavily on memory architecture?
+
+### ✅ Strong Answer
+
+“AI workloads move massive amounts of data, so efficient memory hierarchy is critical for performance.”
+
+---
+
+# 🎯 Mini MCQs
+
+Q1. API versioning mainly helps:
+
+A) cache misses
+B) backward compatibility
+C) CPI
+D) paging
+
+✅ B
+
+---
+
+Q2. Leader election selects:
+
+A) memory block
+B) coordinating node
+C) cache line
+D) interrupt handler
+
+✅ B
+
+---
+
+Q3. Systolic arrays are efficient for:
+
+A) disk scheduling
+B) matrix operations
+C) segmentation
+D) shell commands
+
+✅ B
+
+---
+
+Q4. AI memory hierarchies reduce:
+
+A) latency
+B) threads
+C) page faults
+D) interrupts
+
+✅ A
+
+---
+
+# 📌 Today’s Summary
+
+### OS
+
+✔ API Versioning
+✔ Distributed Leader Election
+
+### COA
+
+✔ Systolic Arrays
+✔ AI Memory Hierarchies
+
+
+Only **11 days left** — you’re now learning concepts taught in advanced systems and AI infrastructure engineering 💯

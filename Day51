@@ -1,0 +1,465 @@
+
+
+🔥 **MODERN DISTRIBUTED SYSTEMS + ADVANCED COMPUTING ROUND**
+
+Today you'll learn:
+
+### 🧠 OS
+
+1. CQRS (Command Query Responsibility Segregation)
+2. Distributed Locking
+
+### ⚙️ COA
+
+3. Heterogeneous Computing
+4. AI Runtime Systems
+
+---
+
+# 🧠 OS Concept 1: CQRS (Command Query Responsibility Segregation)
+
+## First Understand the Problem
+
+Most applications use the same database for:
+
+* Reading data
+* Writing data
+
+Example:
+
+```text
+Instagram
+```
+
+Millions of users read posts.
+
+Very few users create posts.
+
+Reads and writes have different needs.
+
+---
+
+## CQRS Solution
+
+Separate:
+
+### Command Side
+
+Handles:
+
+* Create
+* Update
+* Delete
+
+(Writes)
+
+---
+
+### Query Side
+
+Handles:
+
+* Read operations
+
+---
+
+## Real-World Analogy
+
+Library 📚
+
+Writing side:
+
+```text
+Librarian updates books
+```
+
+Reading side:
+
+```text
+Students search books
+```
+
+Different tasks, different systems.
+
+---
+
+## Why Useful?
+
+✔ Better scalability
+
+✔ Faster reads
+
+✔ Easier optimization
+
+---
+
+## Interview Question
+
+**Q: Why use CQRS?**
+
+👉 Because read and write workloads often have different performance requirements.
+
+---
+
+## Memory Trick
+
+```text
+Command = Change data
+Query = Read data
+```
+
+---
+
+# 🧠 OS Concept 2: Distributed Locking
+
+🔥 Common backend interview topic.
+
+---
+
+## Problem
+
+Multiple servers trying to modify same data.
+
+Example:
+
+```text
+Last seat booking
+```
+
+Server A books it.
+
+Server B books it.
+
+Now two users have same seat. ❌
+
+---
+
+## Solution
+
+Distributed Lock
+
+Only one server gets permission.
+
+Others wait.
+
+---
+
+## Real-World Analogy
+
+Single washroom key 🔑
+
+Only one person can enter at a time.
+
+---
+
+## Why Needed?
+
+✔ Prevent data corruption
+
+✔ Maintain consistency
+
+---
+
+## Popular Tool
+
+Redis distributed locks
+
+---
+
+## Interview Question
+
+**Q: Why distributed locking needed?**
+
+👉 To prevent multiple systems from modifying shared resources simultaneously.
+
+---
+
+## Memory Trick
+
+```text
+One resource
+One lock
+```
+
+---
+
+# ⚙️ COA Concept 3: Heterogeneous Computing
+
+🔥 Modern computing concept.
+
+---
+
+## Traditional System
+
+Only CPU does computation.
+
+---
+
+## Modern System
+
+Different processors do different work.
+
+Example:
+
+```text
+CPU → control logic
+
+GPU → parallel processing
+
+TPU → AI computation
+```
+
+---
+
+## Why?
+
+Different hardware excels at different tasks.
+
+---
+
+## Real-World Analogy
+
+Hospital 🏥
+
+Different specialists:
+
+* Surgeon
+* Cardiologist
+* Neurologist
+
+Each does specific work.
+
+---
+
+## Benefits
+
+✔ Better performance
+
+✔ Better energy efficiency
+
+✔ Faster execution
+
+---
+
+## Interview Question
+
+**Q: What is heterogeneous computing?**
+
+👉 Using different types of processors together for maximum efficiency.
+
+---
+
+## Memory Trick
+
+```text
+Right processor
+For right task
+```
+
+---
+
+# ⚙️ COA Concept 4: AI Runtime Systems
+
+🔥 Important AI infrastructure concept.
+
+---
+
+## What Happens After Training?
+
+Model must run efficiently.
+
+That execution environment is:
+
+👉 AI Runtime
+
+---
+
+## Responsibilities
+
+### Load Model
+
+```text
+Load AI model into memory
+```
+
+---
+
+### Execute Operations
+
+Perform inference.
+
+---
+
+### Manage Hardware
+
+Use:
+
+* CPU
+* GPU
+* TPU
+
+efficiently.
+
+---
+
+## Real-World Analogy
+
+Movie player 🎬
+
+Movie file exists.
+
+Player actually runs it.
+
+---
+
+## Examples
+
+* ONNX Runtime
+* TensorRT
+
+---
+
+## Interview Question
+
+**Q: Why AI runtime systems are important?**
+
+👉 Because they execute trained models efficiently on available hardware.
+
+---
+
+## Memory Trick
+
+```text
+Model = file
+Runtime = executor
+```
+
+---
+
+# 🎯 PROJECT INTERVIEW TRAINING
+
+## Q1
+
+How would you handle millions of reads but fewer writes?
+
+### ✅ Strong Answer
+
+“We can use CQRS to separate read and write workloads and optimize them independently.”
+
+---
+
+## Q2
+
+How would you prevent duplicate seat bookings?
+
+### ✅ Strong Answer
+
+“Using distributed locking to ensure only one system modifies the resource at a time.”
+
+---
+
+## Q3
+
+Why do modern AI systems use GPUs and TPUs together?
+
+### ✅ Strong Answer
+
+“Different processors specialize in different workloads, improving performance and efficiency.”
+
+---
+
+# 🎯 Mini MCQs
+
+### Q1
+
+CQRS separates:
+
+A) CPU and RAM
+
+B) Reads and Writes
+
+C) Cache and Memory
+
+D) Process and Thread
+
+✅ **Answer: B**
+
+---
+
+### Q2
+
+Distributed locking prevents:
+
+A) Duplicate updates
+
+B) Cache misses
+
+C) Paging
+
+D) Context switching
+
+✅ **Answer: A**
+
+---
+
+### Q3
+
+Heterogeneous computing uses:
+
+A) One CPU only
+
+B) Multiple processor types
+
+C) One GPU only
+
+D) One TPU only
+
+✅ **Answer: B**
+
+---
+
+### Q4
+
+AI runtime primarily:
+
+A) Trains models
+
+B) Executes trained models
+
+C) Builds hardware
+
+D) Manages databases
+
+✅ **Answer: B**
+
+---
+
+# 📌 Today's Summary
+
+### 🧠 OS
+
+✔ CQRS
+
+✔ Distributed Locking
+
+---
+
+### ⚙️ COA
+
+✔ Heterogeneous Computing
+
+✔ AI Runtime Systems
+
+---
+
+# 📊 Progress
+
+```text
+Completed: 51 / 60 Days
+
+Remaining: 9 Days
+```
+
+🏆 You are now in the **final revision and industry-level concepts phase**.
+
+

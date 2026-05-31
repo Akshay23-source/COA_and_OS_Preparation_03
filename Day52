@@ -1,0 +1,483 @@
+
+
+### 🧠 OS / Systems
+
+1. Event Sourcing
+2. Distributed Transactions (Deep Dive)
+
+### ⚙️ COA / Computing Systems
+
+3. Domain-Specific Architectures (DSA)
+4. AI Model Serving Systems
+
+---
+
+# 🧠 Concept 1: Event Sourcing
+
+## The Traditional Way
+
+Most systems store only the latest state.
+
+Example:
+
+```text
+Account Balance = ₹5000
+```
+
+You know the current balance.
+
+But:
+
+❌ How did it become ₹5000?
+
+---
+
+## Event Sourcing Approach
+
+Store every event that happened.
+
+Example:
+
+```text
++₹1000 deposited
++₹3000 deposited
++₹2000 deposited
+-₹1000 withdrawn
+```
+
+Current balance is calculated from events.
+
+---
+
+## Real-World Analogy
+
+Think of a bank passbook.
+
+Instead of only showing final balance,
+
+it records every transaction.
+
+---
+
+## Why Useful?
+
+✔ Full audit history
+
+✔ Easy debugging
+
+✔ Replay past events
+
+✔ Recover state
+
+---
+
+## Connection to What You Know
+
+Remember logs?
+
+Event sourcing is like making logs the **primary source of truth**.
+
+---
+
+## Interview Question
+
+**Q: Difference between normal database storage and event sourcing?**
+
+👉 Normal systems store current state. Event sourcing stores all state-changing events.
+
+---
+
+## Memory Trick
+
+```text
+State = Result
+
+Events = History
+```
+
+---
+
+# 🧠 Concept 2: Distributed Transactions (Deep Dive)
+
+You learned Two-Phase Commit earlier.
+
+Now let's understand why it's hard.
+
+---
+
+## Problem
+
+Imagine:
+
+```text
+Payment Service
+Inventory Service
+Order Service
+```
+
+User buys a laptop.
+
+All three must succeed.
+
+---
+
+## Failure Scenario
+
+Payment successful ✅
+
+Inventory updated ❌
+
+Order created ❌
+
+Now system is inconsistent.
+
+---
+
+## Why Difficult?
+
+Because:
+
+* Network failures happen
+* Servers crash
+* Messages get delayed
+
+---
+
+## Traditional Solution
+
+Two-Phase Commit (2PC)
+
+Coordinator asks:
+
+```text
+Can everyone commit?
+```
+
+If yes:
+
+```text
+Commit
+```
+
+Otherwise:
+
+```text
+Rollback
+```
+
+---
+
+## Drawback
+
+If coordinator crashes:
+
+Everyone may wait.
+
+This becomes a bottleneck.
+
+---
+
+## Interview Question
+
+**Q: Why are distributed transactions challenging?**
+
+👉 Because failures can occur between independent systems while maintaining consistency.
+
+---
+
+## Memory Trick
+
+```text
+One transaction
+
+Many systems
+
+Many failure points
+```
+
+---
+
+# ⚙️ Concept 3: Domain-Specific Architectures (DSA)
+
+🔥 Very important modern hardware topic.
+
+*(Not Data Structures & Algorithms here.)*
+
+---
+
+## Traditional CPU
+
+Designed for many different tasks.
+
+---
+
+## Domain-Specific Architecture
+
+Designed for one type of workload.
+
+Examples:
+
+* AI accelerators
+* Video encoding chips
+* Crypto mining chips
+
+---
+
+## Real-World Analogy
+
+Swiss Army Knife vs Specialized Tool
+
+CPU:
+
+```text
+Can do many jobs
+```
+
+Specialized hardware:
+
+```text
+Best at one job
+```
+
+---
+
+## Why Powerful?
+
+✔ Faster
+
+✔ Lower power consumption
+
+✔ Higher efficiency
+
+---
+
+## Examples
+
+* TPU for AI
+* Graphics processors
+* Video accelerators
+
+---
+
+## Interview Question
+
+**Q: Why use domain-specific architectures?**
+
+👉 Because specialized hardware can execute certain workloads much more efficiently than general-purpose CPUs.
+
+---
+
+## Memory Trick
+
+```text
+General = Flexible
+
+Specialized = Efficient
+```
+
+---
+
+# ⚙️ Concept 4: AI Model Serving Systems
+
+🔥 Extremely relevant for modern software engineers.
+
+---
+
+## Training vs Serving
+
+### Training
+
+Teach model.
+
+Example:
+
+```text
+Train chatbot
+```
+
+---
+
+### Serving
+
+Use trained model for real users.
+
+Example:
+
+```text
+User asks question
+
+Model answers
+```
+
+---
+
+## Problem
+
+Thousands of users may send requests simultaneously.
+
+Need:
+
+✔ Fast response
+
+✔ Scalability
+
+✔ Reliability
+
+---
+
+## What Model Serving Systems Do
+
+### Load Models
+
+Keep model ready.
+
+---
+
+### Route Requests
+
+Send requests efficiently.
+
+---
+
+### Scale Automatically
+
+Handle traffic spikes.
+
+---
+
+## Real-World Analogy
+
+Restaurant 🍽️
+
+Training:
+
+```text
+Learning recipes
+```
+
+Serving:
+
+```text
+Serving customers quickly
+```
+
+---
+
+## Examples
+
+* TensorFlow Serving
+* KServe
+
+---
+
+## Interview Question
+
+**Q: Why is model serving difficult?**
+
+👉 Because models must provide low-latency responses while handling large numbers of requests.
+
+---
+
+## Memory Trick
+
+```text
+Training = Learn
+
+Serving = Deliver
+```
+
+---
+
+# 🎯 Project Interview Training
+
+### Q1: Why might event sourcing be useful in a payment system?
+
+✅ Answer:
+
+"It preserves complete transaction history and makes auditing easier."
+
+---
+
+### Q2: Why are distributed transactions risky?
+
+✅ Answer:
+
+"Multiple independent systems can fail at different times, making consistency difficult."
+
+---
+
+### Q3: Why are TPUs faster for AI than CPUs?
+
+✅ Answer:
+
+"TPUs are domain-specific architectures optimized specifically for tensor operations."
+
+---
+
+# 🎯 Mini MCQs
+
+### Q1
+
+Event sourcing stores:
+
+A) Only latest state
+
+B) State-changing events
+
+✅ Answer: **B**
+
+---
+
+### Q2
+
+Main challenge in distributed transactions:
+
+A) Too much RAM
+
+B) Coordinating failures across systems
+
+✅ Answer: **B**
+
+---
+
+### Q3
+
+TPUs are examples of:
+
+A) General-purpose processors
+
+B) Domain-specific architectures
+
+✅ Answer: **B**
+
+---
+
+### Q4
+
+Model serving focuses on:
+
+A) Training models
+
+B) Delivering predictions
+
+✅ Answer: **B**
+
+---
+
+# 📌 Today's Summary
+
+### 🧠 OS / Systems
+
+✔ Event Sourcing
+
+✔ Distributed Transactions Deep Dive
+
+---
+
+### ⚙️ COA / Computing Systems
+
+✔ Domain-Specific Architectures
+
+✔ AI Model Serving Systems
+
+

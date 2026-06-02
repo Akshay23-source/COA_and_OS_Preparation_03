@@ -1,0 +1,504 @@
+
+
+🔥 **MODERN BACKEND + GENERATIVE AI SYSTEMS ROUND**
+
+Today we'll learn:
+
+### 🧠 OS / Distributed Systems
+
+1. CQRS + Event Sourcing Together
+2. Distributed Coordination Services
+
+### ⚙️ COA / Modern Computing
+
+3. Processing-In-Memory (PIM)
+4. Retrieval-Augmented Generation (RAG)
+
+---
+
+# 🧠 Concept 1: CQRS + Event Sourcing Together
+
+Yesterday you learned CQRS and Event Sourcing separately.
+
+Now let's see why they are often used together.
+
+---
+
+## Recall
+
+### CQRS
+
+```text
+Command → Write Data
+
+Query → Read Data
+```
+
+---
+
+### Event Sourcing
+
+```text
+Store Events
+
+Instead of Current State
+```
+
+---
+
+## Combined Architecture
+
+### Write Side
+
+User performs action:
+
+```text
+Create Order
+```
+
+Store event:
+
+```text
+Order Created
+```
+
+---
+
+### Read Side
+
+Build optimized views:
+
+```text
+Orders by User
+
+Orders by Date
+```
+
+---
+
+## Real-World Analogy
+
+Bank System 🏦
+
+Event Store:
+
+```text
+All transactions
+```
+
+Read Model:
+
+```text
+Current balance
+```
+
+---
+
+## Why Powerful?
+
+✔ Full history
+
+✔ Fast reads
+
+✔ Easy auditing
+
+✔ Better scalability
+
+---
+
+## Interview Question
+
+**Q: Why are CQRS and Event Sourcing often combined?**
+
+👉 Event sourcing stores all changes, while CQRS provides optimized read and write paths.
+
+---
+
+## Memory Trick
+
+```text
+Events = Truth
+
+Queries = Fast Views
+```
+
+---
+
+# 🧠 Concept 2: Distributed Coordination Services
+
+🔥 Common in large distributed systems.
+
+---
+
+## Problem
+
+Many servers need coordination.
+
+Questions like:
+
+```text
+Who is leader?
+
+Who owns lock?
+
+Who is alive?
+```
+
+Need centralized coordination.
+
+---
+
+## Solution
+
+Distributed Coordination Service.
+
+---
+
+## Responsibilities
+
+### Leader Election
+
+Choose leader.
+
+---
+
+### Distributed Locking
+
+Manage shared resources.
+
+---
+
+### Service Discovery
+
+Track active services.
+
+---
+
+## Real-World Analogy
+
+School Principal 🎓
+
+Coordinates many classrooms.
+
+---
+
+## Popular Example
+
+Apache ZooKeeper
+
+---
+
+## Why Important?
+
+Without coordination:
+
+❌ Conflicts
+
+❌ Inconsistency
+
+❌ Duplicate work
+
+---
+
+## Interview Question
+
+**Q: Why do distributed systems need coordination services?**
+
+👉 To manage shared state and coordinate actions among many nodes.
+
+---
+
+## Memory Trick
+
+```text
+Many Servers
+
+One Coordinator
+```
+
+---
+
+# ⚙️ Concept 3: Processing-In-Memory (PIM)
+
+🔥 Future hardware architecture.
+
+---
+
+## Traditional Architecture
+
+```text
+Memory → CPU → Memory
+```
+
+Lots of data movement.
+
+---
+
+## Problem
+
+Moving data costs:
+
+❌ Time
+
+❌ Energy
+
+---
+
+## PIM Solution
+
+Perform computation directly inside memory.
+
+---
+
+## Real-World Analogy
+
+Instead of carrying books to another room to read:
+
+👉 Read them in the library itself.
+
+---
+
+## Benefits
+
+✔ Lower latency
+
+✔ Lower power
+
+✔ Faster data-intensive workloads
+
+---
+
+## Uses
+
+* AI
+* Databases
+* Big Data Analytics
+
+---
+
+## Interview Question
+
+**Q: Why is PIM promising?**
+
+👉 Because it reduces expensive data movement between memory and processors.
+
+---
+
+## Memory Trick
+
+```text
+Move Compute
+
+Not Data
+```
+
+---
+
+# ⚙️ Concept 4: Retrieval-Augmented Generation (RAG)
+
+🔥 One of the most important AI concepts today.
+
+---
+
+## Problem with LLMs
+
+LLMs only know what they were trained on.
+
+Knowledge may become outdated.
+
+---
+
+## Solution
+
+RAG
+
+Before answering:
+
+1. Retrieve relevant information
+2. Give information to LLM
+3. Generate answer
+
+---
+
+## Example
+
+User asks:
+
+```text
+Latest NVIDIA GPU?
+```
+
+System:
+
+```text
+Search documents
+
+Retrieve facts
+
+Generate response
+```
+
+---
+
+## Real-World Analogy
+
+Open-book exam 📖
+
+Instead of relying only on memory:
+
+👉 Check reference material first.
+
+---
+
+## Why Important?
+
+✔ More accurate answers
+
+✔ Updated information
+
+✔ Reduced hallucinations
+
+---
+
+## Connection
+
+Many modern AI assistants use RAG-style systems.
+
+---
+
+## Interview Question
+
+**Q: Why is RAG better than using only an LLM?**
+
+👉 Because it can access external knowledge and provide more accurate, up-to-date responses.
+
+---
+
+## Memory Trick
+
+```text
+Retrieve
+
+Then Generate
+```
+
+---
+
+# 🎯 Project Interview Training
+
+### Q1: Why store events instead of only current state?
+
+✅ Answer:
+
+"It preserves complete history and enables auditing, debugging, and reconstruction."
+
+---
+
+### Q2: Why do distributed systems need ZooKeeper-like services?
+
+✅ Answer:
+
+"They provide coordination for leader election, locking, and service discovery."
+
+---
+
+### Q3: Why is data movement a major problem?
+
+✅ Answer:
+
+"Moving data often consumes more time and energy than computation itself."
+
+---
+
+### Q4: Why is RAG becoming popular?
+
+✅ Answer:
+
+"It improves answer quality by combining retrieval systems with language models."
+
+---
+
+# 🎯 Mini MCQs
+
+### Q1
+
+CQRS separates:
+
+A) Read and Write paths
+
+B) CPU and Memory
+
+✅ **Answer: A**
+
+---
+
+### Q2
+
+ZooKeeper mainly provides:
+
+A) Graphics rendering
+
+B) Distributed coordination
+
+✅ **Answer: B**
+
+---
+
+### Q3
+
+PIM stands for:
+
+A) Processing-In-Memory
+
+B) Programmed Instruction Memory
+
+✅ **Answer: A**
+
+---
+
+### Q4
+
+RAG first performs:
+
+A) Generation
+
+B) Retrieval
+
+✅ **Answer: B**
+
+---
+
+# 📌 Today's Summary
+
+### 🧠 OS / Distributed Systems
+
+✔ CQRS + Event Sourcing Integration
+
+✔ Distributed Coordination Services
+
+---
+
+### ⚙️ COA / Modern Computing
+
+✔ Processing-In-Memory (PIM)
+
+✔ Retrieval-Augmented Generation (RAG)
+
+---
+
+# 📊 Progress
+
+```text
+Completed: 54 / 60 Days
+
+Remaining: 6 Days
+```
+
+🏆 You now understand concepts used in:
+
+* Distributed Systems
+* Cloud Infrastructure
+* Modern AI Platforms
+* Large-Scale Backend Engineering
+
+

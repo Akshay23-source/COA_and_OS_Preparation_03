@@ -1,0 +1,523 @@
+
+
+🔥 **RELIABILITY ENGINEERING + AI AGENTS ROUND**
+
+Today we'll learn concepts that are heavily used in:
+
+* Google-scale systems
+* Cloud reliability engineering
+* Modern AI agents
+* Next-generation memory architectures
+
+---
+
+# 🧠 Concept 1: Service-Level Objectives (SLOs)
+
+## First Understand the Problem
+
+Imagine you built a Women Safety App.
+
+Question:
+
+👉 How do you know if your system is performing well?
+
+Just saying:
+
+```text
+"App is working fine"
+```
+
+is not enough.
+
+---
+
+## Solution: SLO
+
+A Service-Level Objective (SLO) is a measurable target.
+
+Example:
+
+```text
+99.9% requests should complete
+within 200 ms
+```
+
+---
+
+## Real-World Analogy
+
+College attendance rule:
+
+```text
+Minimum 75% attendance
+```
+
+That's an objective.
+
+---
+
+## Related Terms
+
+### SLA (Service Level Agreement)
+
+Promise to customers.
+
+---
+
+### SLI (Service Level Indicator)
+
+Actual measured value.
+
+---
+
+### SLO (Service Level Objective)
+
+Target value.
+
+---
+
+## Example
+
+```text
+SLI = 99.7% uptime
+
+SLO = 99.9% uptime
+```
+
+---
+
+## Why Important?
+
+✔ Reliability
+
+✔ User experience
+
+✔ Performance tracking
+
+---
+
+## Interview Question
+
+**Q: Difference between SLI and SLO?**
+
+👉 SLI is the measured metric. SLO is the target value for that metric.
+
+---
+
+## Memory Trick
+
+```text
+Indicator = Measured
+
+Objective = Target
+```
+
+---
+
+# 🧠 Concept 2: Exactly-Once Processing
+
+🔥 Very common distributed systems interview topic.
+
+---
+
+## Problem
+
+Message systems may deliver:
+
+```text
+0 times
+1 time
+Multiple times
+```
+
+---
+
+## Example
+
+Payment processing.
+
+User pays ₹1000.
+
+If processed twice:
+
+❌ User charged ₹2000.
+
+---
+
+## Goal
+
+Process message exactly once.
+
+---
+
+## Why Difficult?
+
+Because:
+
+* Network failures happen
+* Retries happen
+* Servers crash
+
+---
+
+## Solution Ideas
+
+Use:
+
+✔ Idempotency
+
+✔ Transaction logs
+
+✔ Message tracking
+
+---
+
+## Real-World Analogy
+
+Voting 🗳️
+
+Each person should vote:
+
+```text
+Exactly once
+```
+
+---
+
+## Interview Question
+
+**Q: Why is exactly-once processing difficult?**
+
+👉 Because distributed systems face retries, failures, and duplicate message deliveries.
+
+---
+
+## Memory Trick
+
+```text
+One message
+
+One effect
+```
+
+---
+
+# ⚙️ Concept 3: Compute Express Link (CXL)
+
+🔥 Extremely hot hardware topic.
+
+---
+
+## Problem
+
+Modern systems have:
+
+* CPU
+* GPU
+* Memory
+
+Sharing memory efficiently is difficult.
+
+---
+
+## Solution
+
+CXL
+
+A high-speed interconnect that allows:
+
+👉 CPUs, GPUs, and memory devices to share resources efficiently.
+
+---
+
+## Real-World Analogy
+
+Instead of separate water tanks:
+
+```text
+Everyone uses one shared reservoir
+```
+
+---
+
+## Why Important?
+
+✔ Better memory utilization
+
+✔ Faster communication
+
+✔ Scalable AI systems
+
+---
+
+## Used In
+
+Modern:
+
+* AI servers
+* Data centers
+* Cloud infrastructure
+
+---
+
+## Interview Question
+
+**Q: Why is CXL important?**
+
+👉 It enables efficient sharing of memory and resources between heterogeneous devices.
+
+---
+
+## Memory Trick
+
+```text
+CPU + GPU + Memory
+
+Work together better
+```
+
+---
+
+# ⚙️ Concept 4: AI Agent Architectures
+
+🔥 One of the most important AI topics in 2026.
+
+---
+
+## Traditional AI
+
+```text
+Input
+
+↓
+
+Answer
+```
+
+---
+
+## AI Agent
+
+Can:
+
+✔ Plan
+
+✔ Reason
+
+✔ Use tools
+
+✔ Take actions
+
+✔ Observe results
+
+---
+
+## Example
+
+User says:
+
+```text
+Book my flight
+```
+
+Agent:
+
+1. Searches flights
+2. Compares options
+3. Books ticket
+4. Confirms booking
+
+---
+
+## Real-World Analogy
+
+Assistant 🧑‍💼
+
+Instead of only answering questions:
+
+👉 Performs tasks.
+
+---
+
+## Agent Loop
+
+```text
+Observe
+
+↓
+
+Think
+
+↓
+
+Act
+
+↓
+
+Observe Again
+```
+
+---
+
+## Why Important?
+
+Modern AI systems increasingly use:
+
+* tools
+* APIs
+* workflows
+* autonomous decision making
+
+---
+
+## Interview Question
+
+**Q: Difference between chatbot and AI agent?**
+
+👉 Chatbots mainly generate responses. AI agents can plan and perform actions using tools.
+
+---
+
+## Memory Trick
+
+```text
+Chatbot = Answers
+
+Agent = Acts
+```
+
+---
+
+# 🎯 Project Interview Training
+
+### Q1: How would you measure reliability of your app?
+
+✅ Answer:
+
+"We would define SLOs such as uptime, latency, and successful SOS delivery rates."
+
+---
+
+### Q2: Why is exactly-once processing important?
+
+✅ Answer:
+
+"It prevents duplicate side effects like repeated payments or duplicate emergency alerts."
+
+---
+
+### Q3: Why is CXL important for AI systems?
+
+✅ Answer:
+
+"It improves resource sharing and memory scalability between CPUs, GPUs, and accelerators."
+
+---
+
+### Q4: What makes an AI agent different from a chatbot?
+
+✅ Answer:
+
+"Agents can reason, plan, and perform actions using external tools."
+
+---
+
+# 🎯 Mini MCQs
+
+### Q1
+
+SLO represents:
+
+A) Target
+
+B) Measured value
+
+✅ **Answer: A**
+
+---
+
+### Q2
+
+Exactly-once processing ensures:
+
+A) Duplicate execution
+
+B) Single execution
+
+✅ **Answer: B**
+
+---
+
+### Q3
+
+CXL mainly improves:
+
+A) Memory sharing
+
+B) Keyboard speed
+
+✅ **Answer: A**
+
+---
+
+### Q4
+
+AI agents can:
+
+A) Only answer
+
+B) Perform actions
+
+✅ **Answer: B**
+
+---
+
+# 📌 Today's Summary
+
+### 🧠 OS / Distributed Systems
+
+✔ Service-Level Objectives (SLOs)
+
+✔ Exactly-Once Processing
+
+---
+
+### ⚙️ COA / Modern Computing
+
+✔ Compute Express Link (CXL)
+
+✔ AI Agent Architectures
+
+---
+
+# 📊 Progress
+
+```text
+Completed: 55 / 60 Days
+
+Remaining: 5 Days
+```
+
+---
+
+# 🧠 Placement Tip of the Day
+
+If an interviewer asks:
+
+> "What is the most difficult thing in distributed systems?"
+
+A strong answer is:
+
+👉 "Maintaining consistency and reliability despite failures, retries, and network partitions."
+
+This single statement connects:
+
+* Consensus
+* Transactions
+* Sagas
+* Exactly-once processing
+* CAP theorem
+
+and immediately shows deep understanding.
+
+

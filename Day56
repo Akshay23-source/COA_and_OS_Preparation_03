@@ -1,0 +1,476 @@
+
+
+🔥 **SITE RELIABILITY + REAL-TIME DATA + ADVANCED AI ROUND**
+
+Today we'll learn:
+
+### 🧠 OS / Distributed Systems
+
+1. Error Budgets
+2. Stream Processing Systems
+
+### ⚙️ COA / Modern Computing
+
+3. Unified Memory Architecture
+4. Multi-Agent AI Systems
+
+---
+
+# 🧠 Concept 1: Error Budgets
+
+🔥 One of the most important concepts in Site Reliability Engineering (SRE).
+
+---
+
+## First Understand the Problem
+
+Can a system ever be:
+
+```text
+100% available forever?
+```
+
+Practically:
+
+❌ No
+
+Failures happen.
+
+Updates happen.
+
+Hardware fails.
+
+Networks fail.
+
+---
+
+## SRE Thinking
+
+Instead of chasing 100% uptime:
+
+Define an acceptable failure amount.
+
+This is called:
+
+👉 Error Budget
+
+---
+
+## Example
+
+Suppose SLO:
+
+```text
+99.9% uptime
+```
+
+This means:
+
+```text
+0.1% downtime allowed
+```
+
+That allowed downtime is the error budget.
+
+---
+
+## Real-World Analogy
+
+College attendance:
+
+```text
+Need 75%
+
+Can miss 25%
+```
+
+That 25% is your attendance budget.
+
+---
+
+## Why Important?
+
+Balances:
+
+✔ Reliability
+
+✔ Innovation
+
+If error budget exhausted:
+
+👉 Stop releasing risky changes.
+
+---
+
+## Interview Question
+
+**Q: Why are error budgets useful?**
+
+👉 They balance system reliability with development speed.
+
+---
+
+## Memory Trick
+
+```text
+SLO says target
+
+Error budget says allowable failure
+```
+
+---
+
+# 🧠 Concept 2: Stream Processing Systems
+
+🔥 Very common in modern backend systems.
+
+---
+
+## Traditional Processing
+
+Data stored first.
+
+Processed later.
+
+Example:
+
+```text
+Store logs
+
+Analyze tomorrow
+```
+
+---
+
+## Stream Processing
+
+Process data continuously as it arrives.
+
+---
+
+## Examples
+
+* Stock prices
+* GPS tracking
+* Fraud detection
+* Emergency alerts
+
+---
+
+## Real-World Analogy
+
+Water flowing through a river.
+
+You analyze water continuously,
+
+not after collecting entire river.
+
+---
+
+## Why Useful?
+
+✔ Real-time insights
+
+✔ Low latency
+
+✔ Immediate reactions
+
+---
+
+## Examples
+
+* Apache Kafka
+* Apache Flink
+
+---
+
+## Interview Question
+
+**Q: Difference between batch processing and stream processing?**
+
+👉 Batch processes stored data later, while stream processing handles data continuously in real time.
+
+---
+
+## Memory Trick
+
+```text
+Batch = Later
+
+Stream = Now
+```
+
+---
+
+# ⚙️ Concept 3: Unified Memory Architecture (UMA)
+
+🔥 Important modern hardware concept.
+
+---
+
+## Traditional System
+
+CPU memory and GPU memory are separate.
+
+```text
+CPU RAM
+
+↓
+
+Copy Data
+
+↓
+
+GPU Memory
+```
+
+Extra overhead.
+
+---
+
+## UMA Solution
+
+CPU and GPU share memory.
+
+---
+
+## Real-World Analogy
+
+Two people using same notebook instead of copying pages back and forth.
+
+---
+
+## Benefits
+
+✔ Less data copying
+
+✔ Lower latency
+
+✔ Simpler programming
+
+---
+
+## Why Important?
+
+Very useful in:
+
+* AI workloads
+* Graphics
+* Mobile devices
+
+---
+
+## Interview Question
+
+**Q: Why is unified memory useful?**
+
+👉 Because CPU and GPU can access the same data without expensive copying.
+
+---
+
+## Memory Trick
+
+```text
+One memory
+
+Many processors
+```
+
+---
+
+# ⚙️ Concept 4: Multi-Agent AI Systems
+
+🔥 One of the hottest AI topics today.
+
+---
+
+## Single Agent
+
+One AI handles everything.
+
+Problem:
+
+❌ Limited specialization
+
+---
+
+## Multi-Agent System
+
+Many AI agents collaborate.
+
+---
+
+## Example
+
+Travel Planning
+
+### Agent 1
+
+Search flights
+
+---
+
+### Agent 2
+
+Search hotels
+
+---
+
+### Agent 3
+
+Create itinerary
+
+---
+
+## Real-World Analogy
+
+Company departments.
+
+Each team specializes.
+
+Together they solve larger problems.
+
+---
+
+## Advantages
+
+✔ Scalability
+
+✔ Specialization
+
+✔ Better problem solving
+
+---
+
+## Challenge
+
+Agents must coordinate correctly.
+
+---
+
+## Interview Question
+
+**Q: Why use multiple AI agents?**
+
+👉 Different agents can specialize in different tasks and collaborate on complex workflows.
+
+---
+
+## Memory Trick
+
+```text
+One problem
+
+Many specialized agents
+```
+
+---
+
+# 🎯 Project Interview Training
+
+### Q1: How would you monitor system reliability?
+
+✅ Answer:
+
+"We would track SLOs and error budgets to balance uptime and feature development."
+
+---
+
+### Q2: Why might a safety app use stream processing?
+
+✅ Answer:
+
+"Emergency alerts and GPS updates require real-time processing."
+
+---
+
+### Q3: Why is unified memory useful in AI systems?
+
+✅ Answer:
+
+"It reduces expensive data transfers between CPUs and GPUs."
+
+---
+
+### Q4: Why are multi-agent systems becoming popular?
+
+✅ Answer:
+
+"They allow specialized agents to collaborate on complex tasks more effectively."
+
+---
+
+# 🎯 Mini MCQs
+
+### Q1
+
+Error budget represents:
+
+A) Allowed failure
+
+B) Total uptime
+
+✅ **Answer: A**
+
+---
+
+### Q2
+
+Stream processing handles data:
+
+A) Continuously
+
+B) Only monthly
+
+✅ **Answer: A**
+
+---
+
+### Q3
+
+Unified memory reduces:
+
+A) Data copying
+
+B) CPU frequency
+
+✅ **Answer: A**
+
+---
+
+### Q4
+
+Multi-agent systems use:
+
+A) One AI only
+
+B) Multiple collaborating agents
+
+✅ **Answer: B**
+
+---
+
+# 📌 Today's Summary
+
+### 🧠 OS / Distributed Systems
+
+✔ Error Budgets
+
+✔ Stream Processing Systems
+
+---
+
+### ⚙️ COA / Modern Computing
+
+✔ Unified Memory Architecture
+
+✔ Multi-Agent AI Systems
+
+---
+
+# 📊 Progress
+
+```text
+Completed: 56 / 60 Days
+
+

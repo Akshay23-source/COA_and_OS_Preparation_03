@@ -1,0 +1,525 @@
+
+
+🔥 **EVENT-DRIVEN SYSTEMS + FUTURE INFRASTRUCTURE ROUND**
+
+Today we'll learn:
+
+### 🧠 OS / Distributed Systems
+
+1. Distributed Event Streaming
+2. Data Consistency Models
+
+### ⚙️ COA / Modern Computing
+
+3. Memory Disaggregation
+4. AI Orchestration Frameworks
+
+---
+
+# 🧠 Concept 1: Distributed Event Streaming
+
+🔥 One of the most used architectures in modern backend systems.
+
+---
+
+# First Understand the Idea
+
+Instead of services directly talking to each other:
+
+```text
+Service A → Service B
+```
+
+they publish events.
+
+---
+
+## Example
+
+E-commerce Website
+
+User places order.
+
+Event generated:
+
+```text
+Order Created
+```
+
+---
+
+Multiple services react:
+
+```text
+Payment Service
+
+Inventory Service
+
+Notification Service
+
+Analytics Service
+```
+
+---
+
+## Real-World Analogy
+
+News Channel 📺
+
+A news channel broadcasts once.
+
+Millions of viewers consume it.
+
+The broadcaster doesn't call each viewer individually.
+
+---
+
+## Why Powerful?
+
+✔ Loosely coupled systems
+
+✔ Scalability
+
+✔ Fault tolerance
+
+✔ Real-time processing
+
+---
+
+## Connection
+
+This extends:
+
+* Message Brokers
+* Kafka
+* Event-Driven Architecture
+
+that you learned earlier.
+
+---
+
+## Interview Question
+
+**Q: Why use event streaming?**
+
+👉 Because producers and consumers become independent, improving scalability and flexibility.
+
+---
+
+## Memory Trick
+
+```text
+Produce event
+
+Many consumers react
+```
+
+---
+
+# 🧠 Concept 2: Data Consistency Models
+
+🔥 Very common system design interview topic.
+
+---
+
+## The Problem
+
+Suppose:
+
+Server A stores:
+
+```text
+Balance = ₹5000
+```
+
+Server B stores:
+
+```text
+Balance = ₹4000
+```
+
+Which one is correct?
+
+---
+
+## Different Consistency Models
+
+---
+
+### Strong Consistency
+
+All users see latest data immediately.
+
+---
+
+### Eventual Consistency
+
+Updates propagate gradually.
+
+Eventually all nodes agree.
+
+---
+
+### Causal Consistency
+
+Related operations maintain order.
+
+---
+
+## Real-World Analogy
+
+Google Docs
+
+Strong consistency:
+
+Everyone sees edits immediately.
+
+---
+
+WhatsApp profile picture
+
+May take time to update everywhere.
+
+That's eventual consistency.
+
+---
+
+## Tradeoff
+
+More consistency often means:
+
+❌ Lower availability
+
+❌ Higher latency
+
+---
+
+## Interview Question
+
+**Q: Why do distributed systems use eventual consistency?**
+
+👉 To improve scalability and availability.
+
+---
+
+## Memory Trick
+
+```text
+Strong = Immediate
+
+Eventual = Later
+```
+
+---
+
+# ⚙️ Concept 3: Memory Disaggregation
+
+🔥 Extremely important future data-center concept.
+
+---
+
+## Traditional System
+
+Each server owns:
+
+```text
+CPU
+
+Memory
+
+Storage
+```
+
+---
+
+## Problem
+
+One server may have:
+
+```text
+Free memory
+```
+
+while another runs out.
+
+Wasteful.
+
+---
+
+## Solution
+
+Memory Disaggregation
+
+Pool memory across many servers.
+
+---
+
+## Real-World Analogy
+
+Hostel rooms sharing one common library instead of each room buying separate books.
+
+---
+
+## Benefits
+
+✔ Better resource utilization
+
+✔ Flexibility
+
+✔ Scalability
+
+---
+
+## Why Important?
+
+Modern AI systems need:
+
+```text
+TBs of memory
+```
+
+Memory pooling becomes essential.
+
+---
+
+## Interview Question
+
+**Q: Why is memory disaggregation useful?**
+
+👉 Because memory resources can be shared efficiently across servers.
+
+---
+
+## Memory Trick
+
+```text
+Memory becomes a shared resource
+```
+
+---
+
+# ⚙️ Concept 4: AI Orchestration Frameworks
+
+🔥 Extremely relevant in 2026.
+
+---
+
+## Problem
+
+AI systems often involve:
+
+* LLM
+* RAG
+* Tools
+* Agents
+* Databases
+
+Managing everything manually becomes difficult.
+
+---
+
+## Solution
+
+AI Orchestration
+
+Coordinates all components.
+
+---
+
+## Responsibilities
+
+### Workflow Management
+
+```text
+Step 1
+
+↓
+
+Step 2
+
+↓
+
+Step 3
+```
+
+---
+
+### Tool Calling
+
+Select proper tools.
+
+---
+
+### Agent Coordination
+
+Multiple agents work together.
+
+---
+
+## Real-World Analogy
+
+Movie Director 🎬
+
+Actors perform.
+
+Director coordinates.
+
+---
+
+## Examples
+
+* LangChain
+* CrewAI
+
+---
+
+## Interview Question
+
+**Q: Why are orchestration frameworks important?**
+
+👉 Because modern AI applications involve many interconnected components that must work together reliably.
+
+---
+
+## Memory Trick
+
+```text
+AI Components
+
+Need a Conductor
+```
+
+---
+
+# 🎯 Project Interview Training
+
+### Q1: Why would a large system use event streaming?
+
+✅ Answer:
+
+"It allows services to communicate asynchronously while remaining loosely coupled."
+
+---
+
+### Q2: Why choose eventual consistency?
+
+✅ Answer:
+
+"It improves availability and scalability in distributed environments."
+
+---
+
+### Q3: Why are future AI systems interested in memory disaggregation?
+
+✅ Answer:
+
+"Large AI workloads need flexible access to massive shared memory pools."
+
+---
+
+### Q4: Why do AI applications need orchestration frameworks?
+
+✅ Answer:
+
+"They coordinate agents, tools, workflows, and models into a unified system."
+
+---
+
+# 🎯 Mini MCQs
+
+### Q1
+
+Event streaming improves:
+
+A) Loose coupling
+
+B) Cache size
+
+✅ **Answer: A**
+
+---
+
+### Q2
+
+Eventual consistency prioritizes:
+
+A) Scalability
+
+B) Immediate consistency
+
+✅ **Answer: A**
+
+---
+
+### Q3
+
+Memory disaggregation makes memory:
+
+A) Shared
+
+B) Smaller
+
+✅ **Answer: A**
+
+---
+
+### Q4
+
+AI orchestration frameworks manage:
+
+A) Workflows
+
+B) CPU frequency
+
+✅ **Answer: A**
+
+---
+
+# 📌 Today's Summary
+
+### 🧠 OS / Distributed Systems
+
+✔ Distributed Event Streaming
+
+✔ Data Consistency Models
+
+---
+
+### ⚙️ COA / Modern Computing
+
+✔ Memory Disaggregation
+
+✔ AI Orchestration Frameworks
+
+---
+
+# 📊 Progress
+
+```text
+Completed: 57 / 60 Days
+
+Remaining: 3 Days
+```
+
+# 🎯 Placement Interview Gold Question
+
+**"What is the biggest challenge in distributed systems?"**
+
+A strong answer:
+
+> "Balancing consistency, availability, fault tolerance, scalability, and performance while operating across unreliable networks."
+
+This connects:
+
+✔ CAP Theorem
+✔ Consensus
+✔ Transactions
+✔ Event Streaming
+✔ Consistency Models
+
+and immediately signals deep understanding.
+
+---
+
+# 🚀 Day 58 Preview
+

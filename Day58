@@ -1,0 +1,544 @@
+
+
+🔥 **WORKFLOW AUTOMATION + DATA REPLICATION + NEXT-GEN AI ROUND**
+
+We are now in the final phase. Instead of memorizing definitions, focus on **how all these systems solve real-world problems**.
+
+Today we'll learn:
+
+### 🧠 OS / Distributed Systems
+
+1. Distributed Workflow Engines
+2. Data Replication Strategies
+
+### ⚙️ COA / Modern Computing
+
+3. Computational Storage
+4. Agentic RAG Systems
+
+---
+
+# 🧠 Concept 1: Distributed Workflow Engines
+
+## The Problem
+
+Imagine an online order:
+
+```text
+Payment
+ ↓
+Inventory Check
+ ↓
+Shipping
+ ↓
+Notification
+```
+
+What if:
+
+❌ Payment succeeds
+❌ Inventory succeeds
+❌ Shipping fails
+
+How do we know what happened?
+
+How do we resume?
+
+---
+
+## Solution
+
+A Workflow Engine tracks every step.
+
+---
+
+## What It Does
+
+It remembers:
+
+```text
+Current Step
+Completed Steps
+Failed Steps
+Retry Status
+```
+
+---
+
+## Real-World Analogy
+
+GPS Navigation 🚗
+
+It always knows:
+
+* where you are
+* where you're going
+* what to do if you take a wrong turn
+
+---
+
+## Why Important?
+
+Without workflow engines:
+
+❌ Hard to recover from failures
+
+❌ Hard to coordinate long-running processes
+
+---
+
+## Examples
+
+* Temporal
+* Apache Airflow
+
+---
+
+## Interview Question
+
+**Q: Why use a workflow engine?**
+
+👉 To reliably manage complex multi-step business processes.
+
+---
+
+## Memory Trick
+
+```text
+Workflow Engine
+
+= GPS for Business Processes
+```
+
+---
+
+# 🧠 Concept 2: Data Replication Strategies
+
+🔥 One of the most important distributed-system concepts.
+
+---
+
+## First Understand Why Replication Exists
+
+Suppose you have:
+
+```text
+One Database Server
+```
+
+If it crashes:
+
+❌ System down
+
+---
+
+## Solution
+
+Create copies.
+
+```text
+Primary
+ ↓
+Replica 1
+ ↓
+Replica 2
+```
+
+---
+
+# Types of Replication
+
+---
+
+## 1. Synchronous Replication
+
+Write succeeds only when replicas update.
+
+### Advantage
+
+✔ Strong consistency
+
+### Disadvantage
+
+❌ Higher latency
+
+---
+
+## 2. Asynchronous Replication
+
+Primary responds immediately.
+
+Replicas update later.
+
+### Advantage
+
+✔ Faster
+
+### Disadvantage
+
+❌ Temporary inconsistency
+
+---
+
+## Real-World Analogy
+
+Class Notes 📖
+
+Synchronous:
+
+Everyone updates notes immediately.
+
+Asynchronous:
+
+Some students copy notes later.
+
+---
+
+## Interview Question
+
+**Q: Why do many large systems use asynchronous replication?**
+
+👉 Because it improves performance and availability.
+
+---
+
+## Memory Trick
+
+```text
+Sync = Safe but Slow
+
+Async = Fast but Delayed
+```
+
+---
+
+# ⚙️ Concept 3: Computational Storage
+
+🔥 Emerging architecture concept.
+
+---
+
+## Traditional Storage
+
+Storage only stores data.
+
+CPU performs computation.
+
+```text
+Storage
+ ↓
+Move Data
+ ↓
+CPU
+```
+
+---
+
+## Problem
+
+Huge data movement.
+
+---
+
+## Solution
+
+Perform computation inside storage devices.
+
+---
+
+## Example
+
+Instead of moving:
+
+```text
+10 TB log file
+```
+
+to CPU,
+
+Storage performs:
+
+```text
+Filtering
+Searching
+Aggregation
+```
+
+internally.
+
+---
+
+## Real-World Analogy
+
+Instead of bringing all books home to search for one page:
+
+👉 Search inside library.
+
+---
+
+## Benefits
+
+✔ Lower latency
+
+✔ Lower bandwidth usage
+
+✔ Better energy efficiency
+
+---
+
+## Interview Question
+
+**Q: Why computational storage is attractive?**
+
+👉 Because moving data is often more expensive than processing it.
+
+---
+
+## Memory Trick
+
+```text
+Move Compute
+
+Not Data
+```
+
+---
+
+# ⚙️ Concept 4: Agentic RAG Systems
+
+🔥 One of the hottest AI architecture topics.
+
+---
+
+## Recall RAG
+
+RAG:
+
+```text
+Retrieve
+ ↓
+Generate
+```
+
+---
+
+## Traditional RAG
+
+User asks question.
+
+System retrieves information.
+
+LLM answers.
+
+---
+
+## Agentic RAG
+
+Adds reasoning and planning.
+
+Agent can:
+
+✔ Decide what to search
+
+✔ Search multiple sources
+
+✔ Verify results
+
+✔ Perform tool calls
+
+✔ Generate final answer
+
+---
+
+## Real-World Analogy
+
+Student solving assignment.
+
+Instead of reading one book:
+
+👉 searches multiple references
+
+👉 verifies facts
+
+👉 combines information
+
+---
+
+## Workflow
+
+```text
+Question
+ ↓
+Plan
+ ↓
+Retrieve
+ ↓
+Evaluate
+ ↓
+Generate
+```
+
+---
+
+## Why Important?
+
+Improves:
+
+✔ accuracy
+
+✔ reasoning
+
+✔ reliability
+
+---
+
+## Interview Question
+
+**Q: Difference between RAG and Agentic RAG?**
+
+👉 Agentic RAG adds planning, reasoning, and tool usage before generating answers.
+
+---
+
+## Memory Trick
+
+```text
+RAG = Search + Answer
+
+Agentic RAG = Think + Search + Answer
+```
+
+---
+
+# 🎯 Project Interview Training
+
+### Q1: How would you handle long-running business operations?
+
+✅ Answer:
+
+"We would use workflow engines to manage execution, retries, and recovery."
+
+---
+
+### Q2: Why use replicas in databases?
+
+✅ Answer:
+
+"To improve availability, fault tolerance, and scalability."
+
+---
+
+### Q3: Why is computational storage becoming important?
+
+✅ Answer:
+
+"Because data movement is increasingly becoming a system bottleneck."
+
+---
+
+### Q4: Why is Agentic RAG more powerful than traditional RAG?
+
+✅ Answer:
+
+"It adds reasoning and planning, allowing more intelligent retrieval and decision-making."
+
+---
+
+# 🎯 Mini MCQs
+
+### Q1
+
+Workflow engines help manage:
+
+A) Multi-step processes
+
+B) CPU pipelines
+
+✅ **Answer: A**
+
+---
+
+### Q2
+
+Asynchronous replication prioritizes:
+
+A) Performance
+
+B) Immediate consistency
+
+✅ **Answer: A**
+
+---
+
+### Q3
+
+Computational storage reduces:
+
+A) Data movement
+
+B) Cache size
+
+✅ **Answer: A**
+
+---
+
+### Q4
+
+Agentic RAG adds:
+
+A) Planning and reasoning
+
+B) CPU scheduling
+
+✅ **Answer: A**
+
+---
+
+# 📌 Today's Summary
+
+### 🧠 OS / Distributed Systems
+
+✔ Distributed Workflow Engines
+
+✔ Data Replication Strategies
+
+---
+
+### ⚙️ COA / Modern Computing
+
+✔ Computational Storage
+
+✔ Agentic RAG Systems
+
+---
+
+# 📊 Progress
+
+```text
+Completed: 58 / 60 Days
+
+Remaining: 2 Days
+```
+
+# 🧠 How Everything Connects (Big Picture)
+
+Notice how the last 20+ days connect:
+
+```text
+Distributed Systems
+        ↓
+Microservices
+        ↓
+Event Streaming
+        ↓
+Workflows
+        ↓
+AI Agents
+        ↓
+Agentic RAG
+```
+
+This is exactly how many modern AI products are built today.
+
+---
+
